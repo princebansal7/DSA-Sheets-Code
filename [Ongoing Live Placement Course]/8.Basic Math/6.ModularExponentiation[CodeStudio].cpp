@@ -31,9 +31,6 @@ int ModularExp(int x, int n, int m) {
 
 int main()
 {
-#ifdef PRINCE
-    freopen("debug.txt", "w", stderr);
-#endif
     fast_io
 
     int x, n, m; cin >> x >> n >> m;
