@@ -9,5 +9,5 @@ int main(){
     cout<<"value of n:"<<*ptr<<nl;
     cout<<"Address of n:"<<&n<<nl;
     cout<<"Address of n:"<<ptr<<nl;
-    return 0;
+    
 }
