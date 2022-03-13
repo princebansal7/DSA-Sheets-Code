@@ -13,6 +13,6 @@ int main() {
     cout << "size of pointer var: " << sizeof(ptr) << nl;
     
     int *temp = NULL;
-    // cout << *temp<< nl; // error
+    // cout << *temp<< nl; // error, as temp pointing to nothing
     return 0;
 }
