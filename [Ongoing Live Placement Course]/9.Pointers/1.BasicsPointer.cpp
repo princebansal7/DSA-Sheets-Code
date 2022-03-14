@@ -13,6 +13,6 @@ int main() {
     cout << "size of pointer var: " << sizeof(ptr) << nl;
     
     int *temp = NULL;
-    // cout << *temp<< nl; // error, as temp pointing to nothing
+    // cout << *temp<< nl; // error, as temp pointing to nothing => segmentation fault
     return 0;
 }
