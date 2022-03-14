@@ -6,10 +6,10 @@ using namespace std;
 /*  when n>0
 
         I/P: 69
-        O/P: six nine
+        O/P: Six Nine
 
         I/P: 7777
-        O/P: seven seven seven seven
+        O/P: Seven Seven Seven Seven
 
 */
 
