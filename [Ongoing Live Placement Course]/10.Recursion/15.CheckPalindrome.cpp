@@ -5,14 +5,14 @@ using namespace std;
 #define ll long long
 
 // Way 1: Using Two Pointers
-bool isPalindrome(string &s, int i, int j)
+bool isPalindrome1(string &s, int i, int j)
 {
 
     if (i > j)
         return true;
     if (s[i] != s[j])
         return false;
-    return isPalindrome(s, i + 1, j - 1);
+    return isPalindrome1(s, i + 1, j - 1);
 
     /*-------- Way-2------------------------
     if (s[i] != s[j])
@@ -46,7 +46,7 @@ int main()
     int i = 0, j = s.size() - 1;
 
     bool ans;
-    // ans = isPalindrome(s, i, j);
+    // ans = isPalindrome1(s, i, j);
     ans = isPalindrome2(s, i, size);
 
     if (ans)
