@@ -1,6 +1,5 @@
 /*
     @author: princebansal_
-    Types of Sorting algo [GFG]: https://www.geeksforgeeks.org/classification-of-sorting-algorithms/
 
 */
 
