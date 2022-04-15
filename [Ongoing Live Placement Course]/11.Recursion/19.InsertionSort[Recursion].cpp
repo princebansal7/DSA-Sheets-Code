@@ -17,7 +17,7 @@ void insertionSort(int arr[], int n)
     if (n == 0 or n == 1)
         return;
 
-    // solve 1 case: put largest element to end
+    // solve 1 case:
 
     // Recursive call for remaining part
     insertionSort(arr, n - 1);

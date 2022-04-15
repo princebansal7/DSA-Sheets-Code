@@ -17,9 +17,9 @@ void selectionSort(int arr[], int n)
     if (n == 0 or n == 1)
         return;
 
-    // solve 1 case: put largest element to end
+    // solve 1 case:
 
-    // Recursive call for remaining part
+        // Recursive call for remaining part
     selectionSort(arr, n - 1);
 }
 
