@@ -37,7 +37,7 @@ void insertionSort(int arr[], int n)
     {
         int key = arr[i]; // storing the element so that, after left shifting we can put it in it's correct positiom
         int j = i - 1;
-        while (j >= 0 && arr[j] > key) // arr[j]>=key => now algo won't be stable
+        while (j >= 0 && arr[j] > key) // if arr[j]>=key => now algo won't be stable
         {
             arr[j + 1] = arr[j];
             j--;
