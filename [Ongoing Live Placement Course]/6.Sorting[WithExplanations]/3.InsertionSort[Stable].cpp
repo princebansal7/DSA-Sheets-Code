@@ -27,6 +27,7 @@ int arr[100];
     4.TC: theta(N^2) for Worst Case (When given array is reverse sorted, because maximum shifting happens)
     5.TC: theta(N) for Best Case (When given array is already Sorted)
     6.In General- TC: O(N^2)
+    7. Adbaptable and Stable algo
 */
 
 //-------TC:O(N^2), SC:O(1)----------------------------------------------

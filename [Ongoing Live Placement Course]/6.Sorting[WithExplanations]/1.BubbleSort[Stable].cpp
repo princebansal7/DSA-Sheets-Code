@@ -15,7 +15,8 @@ int arr[100];
     1.Swaps adjacent elements only if a[i]>a[i+1] => keeps the order same as
       original array => Stable sorting algo
 
-    2. After each pass, largest element bubbled up to the top that's why called Bubble sort !!
+    2.After each pass, largest element bubbled up to the top that's why called Bubble sort !!
+    3.Adaptive and Stable sorting algo
 */
 
 //-------WAY-1---------------------------------------------------

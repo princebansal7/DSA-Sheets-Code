@@ -1,5 +1,6 @@
 /*
     @author: princebansal_
+    Types of Sorting algo [GFG]: https://www.geeksforgeeks.org/classification-of-sorting-algorithms/
 
 */
 
@@ -21,6 +22,8 @@ int arr[100];
     3.But not an Optimal algo in term of memory writes, Cycle sort is more optimal in term of memory writes
     4.TC: O(N^2) for all cases
     5.Base fot Heap Sort
+    6. Non Adaptive and Unstable sorting algo
+
 */
 
 //-------WAY-1 (Using Extra space) TC:O(N^2), SC:O(N)---------------------------------------------------
