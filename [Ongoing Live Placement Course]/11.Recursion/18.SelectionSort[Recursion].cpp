@@ -19,7 +19,7 @@ void selectionSort(int arr[], int n)
 
     // solve 1 case:
 
-        // Recursive call for remaining part
+    // Recursive call for remaining part
     selectionSort(arr, n - 1);
 }
 
