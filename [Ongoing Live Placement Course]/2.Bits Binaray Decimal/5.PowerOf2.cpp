@@ -24,7 +24,7 @@ bool isPowerOfTwo(int n) {
 			count++;
 		n = n >> 1;
 	}
-	if (count == 1)   // Any number which is in power of 2, have set bit=1 always
+	if (count == 1)   // Any number which is in power of 2, have only 1 set bit always
 		return true;
 	return false;
 }

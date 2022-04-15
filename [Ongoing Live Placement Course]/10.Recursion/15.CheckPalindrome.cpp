@@ -5,6 +5,7 @@ using namespace std;
 #define ll long long
 
 // Way 1: Using Two Pointers
+
 bool isPalindrome1(string &s, int i, int j)
 {
 
@@ -24,6 +25,7 @@ bool isPalindrome1(string &s, int i, int j)
 }
 
 // Way-2: Using One Pointer
+
 bool isPalindrome2(string &s, int i, int size)
 {
     // Doesn't work for Even size string (Correction required)
