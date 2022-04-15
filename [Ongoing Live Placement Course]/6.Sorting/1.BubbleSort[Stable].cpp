@@ -9,7 +9,9 @@ using namespace std;
 #define ll long long
 
 int arr[100];
-/*
+
+/*---------BUBBLE SORT (Inplace and Stable sorting algorithm)-----------------------
+
     1.Swaps adjacent elements only if a[i]>a[i+1] => keeps the order same as
       original array => Stable sorting algo
 
