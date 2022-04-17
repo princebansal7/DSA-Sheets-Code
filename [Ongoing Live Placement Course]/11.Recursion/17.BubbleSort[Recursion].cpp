@@ -14,7 +14,7 @@ int arr[100];
 void bubbleSort(int arr[], int n)
 {
     // base case
-    if (n == 0 or n == 1)
+    if (n <= 1)
         return;
 
     // solve 1 case: put largest element to end

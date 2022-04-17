@@ -4,7 +4,6 @@
 */
 
 #include <iostream>
-#include <utility>
 using namespace std;
 #define nl "\n"
 #define ll long long
@@ -14,13 +13,22 @@ int arr[100];
 void insertionSort(int arr[], int n)
 {
     // base case
-    if (n == 0 or n == 1)
+    if (n <= 1)
         return;
-
-    // solve 1 case:
 
     // Recursive call for remaining part
     insertionSort(arr, n - 1);
+
+    // solve 1 case: inserting last element to it's correct position
+
+    int key = arr[n - 1];
+    int j = n - 2;
+    while (j >= 0 and arr[j] > key)
+    {
+        arr[j + 1] = arr[j];
+        j--;
+    }
+    arr[j + 1] = key;
 }
 
 int main()
