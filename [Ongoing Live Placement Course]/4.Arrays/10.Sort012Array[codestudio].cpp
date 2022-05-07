@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 int main()
@@ -8,7 +8,8 @@ int main()
     freopen("debug.txt", "w", stderr);
 #endif
 
-    int n; cin >> n;
+    int n;
+    cin >> n;
     vector<int> v(n);
 
     for (int i = 0; i < n; ++i)
@@ -53,8 +54,6 @@ int main()
         v[i] = 1;
     for (int i = (zeroes + ones); i < (zeroes + ones + twos); i++)
         v[i] = 2;
-
-
 
     for (int i = 0; i < n; ++i)
         cout << v[i] << " ";
