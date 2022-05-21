@@ -1,4 +1,4 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
 int main()
@@ -20,7 +20,8 @@ int main()
 
     */
 
-    int n; cin >> n;
+    int n;
+    cin >> n;
     int i = 1;
     while (i <= n) {
         int j = 1;
