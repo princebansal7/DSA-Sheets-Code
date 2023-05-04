@@ -1,4 +1,4 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
 int main()
@@ -10,10 +10,9 @@ int main()
         D D D D D
         E E E E E
     */
-#ifndef ONLINE_JUDGE
-    freopen("debug.txt", "w", stderr);
-#endif
-    int n; cin >> n;
+
+    int n;
+    cin >> n;
 
     /* ----WAY-1---------------------
         int i = 1;
@@ -35,7 +34,7 @@ int main()
     while (i <= n) {
         int j = 1;
         while (j <= n) {
-            cout << (char) ('A' + i - 1) << " ";
+            cout << (char)('A' + i - 1) << " ";
             j++;
         }
         cout << endl;

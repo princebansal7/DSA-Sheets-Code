@@ -1,4 +1,4 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
 int main()
@@ -10,11 +10,9 @@ int main()
         D E F G H
         E F G H I
     */
-#ifndef ONLINE_JUDGE
-    freopen("debug.txt", "w", stderr);
-#endif
 
-    int n; cin >> n;
+    int n;
+    cin >> n;
     /*------ WAY-1----------------------------
     char ch = 'A';
     int i = 1;
@@ -91,7 +89,7 @@ int main()
              => Hence required:   'A'+ i + j - 2
 
             */
-            cout << (char)('A' + i + j - 2) << " ";  // by simple math
+            cout << (char)('A' + i + j - 2) << " "; // by simple math
             j++;
         }
         cout << endl;

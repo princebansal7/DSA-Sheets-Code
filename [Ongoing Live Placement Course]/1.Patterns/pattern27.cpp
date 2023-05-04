@@ -1,4 +1,4 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
 int main()
@@ -11,15 +11,16 @@ int main()
         123454321
     */
 
-#ifndef ONLINE_JUDGE
-    freopen("debug.txt", "w", stderr);
-#endif
-    int n; cin >> n;
+    // #ifndef ONLINE_JUDGE
+    //     freopen("debug.txt", "w", stderr);
+    // #endif
+    int n;
+    cin >> n;
 
     int i = 1;
     while (i <= n) {
 
-// PRINTING space triangle
+        // PRINTING space triangle
 
         int space = n - i;
         while (space) {
@@ -27,14 +28,14 @@ int main()
             space--;
         }
 
-// PRINTING 2nd triangle
+        // PRINTING 2nd triangle
 
         int j = 1;
         while (j <= i) {
             cout << j;
             j++;
         }
-// PRINTING 3rd triangle (** IMP)
+        // PRINTING 3rd triangle (** IMP)
 
         int start = i - 1;
         while (start) {

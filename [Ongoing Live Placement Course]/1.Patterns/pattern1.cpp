@@ -4,9 +4,6 @@ using namespace std;
 int main()
 {
 
-#ifndef ONLINE_JUDGE
-    freopen("debug.txt", "w", stderr);
-#endif
     /*
 
     i  =  rows

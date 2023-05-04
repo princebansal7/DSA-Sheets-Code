@@ -1,4 +1,4 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
 int main()
@@ -10,10 +10,9 @@ int main()
         16 17 18 19 20
         21 22 23 24 25
     */
-#ifndef ONLINE_JUDGE
-    freopen("debug.txt", "w", stderr);
-#endif
-    int n; cin >> n;
+
+    int n;
+    cin >> n;
 
     /* -----WAY-1-----------
 

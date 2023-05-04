@@ -1,20 +1,18 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
 int main()
 {
     /*
-        * * * * *
-        * * * *
-        * * *
-        * *
-        *
-    */
-#ifndef ONLINE_JUDGE
-    freopen("debug.txt", "w", stderr);
-#endif
+     * * * * *
+     * * * *
+     * * *
+     * *
+     *
+     */
 
-    int n; cin >> n;
+    int n;
+    cin >> n;
 
     /*---------------WAY-1----------------
         int i = 1;
@@ -31,7 +29,7 @@ int main()
         }
     --------------------------------------*/
 
-// ----------WAY-2------------------------
+    // ----------WAY-2------------------------
 
     int i = 1;
     while (i <= n) {
@@ -39,7 +37,8 @@ int main()
         int j = 1;
         int star = n - i + 1;
         while (j <= star) {
-            cout << "*" << " ";
+            cout << "*"
+                 << " ";
             j++;
         }
 

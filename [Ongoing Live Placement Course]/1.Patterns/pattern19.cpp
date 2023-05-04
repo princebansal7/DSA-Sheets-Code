@@ -1,9 +1,8 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
 int main()
 {
-
     /*
         E
         D E
@@ -12,7 +11,8 @@ int main()
         A B C D E
     */
 
-    int n; cin >> n;
+    int n;
+    cin >> n;
 
     int i = 1;
     while (i <= n) {

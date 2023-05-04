@@ -1,4 +1,4 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
 int main()
@@ -10,10 +10,9 @@ int main()
         5 4 3 2 1
         5 4 3 2 1
     */
-#ifndef ONLINE_JUDGE
-    freopen("debug.txt", "w", stderr);
-#endif
-    int n; cin >> n;
+
+    int n;
+    cin >> n;
     int i = 1;
     while (i <= n) {
 
@@ -34,7 +33,6 @@ int main()
             cout << n - j + 1 << " ";
             j++;
         }
-
 
         cout << endl;
         i++;

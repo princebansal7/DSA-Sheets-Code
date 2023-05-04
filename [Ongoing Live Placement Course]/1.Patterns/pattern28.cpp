@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <iostream>
 using namespace std;
 #define nl "\n"
 #define ll long long
@@ -14,7 +14,8 @@ int main()
         1 * * * * * * * * 1
     _______________________________*/
 
-    int n; cin >> n;
+    int n;
+    cin >> n;
     int i, j;
     for (i = 1; i <= n; i++) {
         int val1 = 1;

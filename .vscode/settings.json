@@ -91,6 +91,7 @@
     "editor.defaultFormatter": "ms-vscode.cpptools",
     "C_Cpp.clang_format_fallbackStyle": "WebKit",
     "code-runner.executorMap": {
-        "cpp":"cd $dir && g++ -std=c++17 $fileName -o $fileNameWihoutExt && ./$fileNameWihoutExt && rm ./$fileNameWihoutExt",
+        "cpp":"cd $dir && g++-13 -std=c++17 $fileName -o $fileNameWihoutExt && ./$fileNameWihoutExt && rm ./$fileNameWihoutExt",
     },
+    "editor.fontSize": 14,
 }
