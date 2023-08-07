@@ -1,4 +1,5 @@
-#include<bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 #define nl "\n"
 #define ll long long
@@ -20,15 +21,15 @@ vector<vector<int>> generate(int numRows) {
     }
 ____________________________________________*/
 
-
 //____WAY-2 (Easy to Understand)_________________
 
-vector<vector<int>>generate(int n) {
+vector<vector<int>> generate(int n)
+{
     vector<vector<int>> ans;
 
     for (int i = 0; i < n; i++) {
 
-        vector<int>row(i + 1, 1); // creating rows with initial value 1
+        vector<int> row(i + 1, 1); // creating rows with initial value 1
 
         for (int j = 1; j < i; j++) {
             // each block in a row will have sum of the blocks (just above one, and one before it)
@@ -46,7 +47,8 @@ int main()
 
     vector<vector<int>> ans;
 
-    int n; cin >> n;
+    int n;
+    cin >> n;
 
     ans = generate(n);
 

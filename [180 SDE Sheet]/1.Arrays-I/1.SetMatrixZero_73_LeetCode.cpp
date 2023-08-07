@@ -1,36 +1,39 @@
-#include<bits/stdc++.h>
+// #include <bits/stdc++.h>
+#include <climits>
+#include <iostream>
+#include <vector>
+#define nl '\n'
 using namespace std;
-
 
 // Brute force way , TC: O[(n*m)*(n+m)], SC: O(1)
 
 // works for range -2^31 < a[i][j] < 2^31-1 (excluding INT_MAX & INT_MIN)
 // INT_MIN = -2^31 = -2147483648 , INT_MAX = 2^31 - 1 = 2147483647
 
-void SetZeros(vector<vector<int>> &a) {
+void SetZeros(vector<vector<int>>& a)
+{
 
-    for (int i = 0 ; i < a.size() ; i++) {
-        for (int j = 0 ; j < a[i].size(); j++) {
+    for (int i = 0; i < a.size(); i++) {
+        for (int j = 0; j < a[i].size(); j++) {
 
             if (a[i][j] == 0) { // element 0, so making it's corresponding row and col = INT_MIN
 
                 for (int col = 0; col < a[i].size(); col++) { // travesing row
-                    if (a[i][col] != 0) {          // Leaving any element which is already 0
+                    if (a[i][col] != 0) { // Leaving any element which is already 0
                         a[i][col] = INT_MIN;
                     }
                 }
                 for (int row = 0; row < a.size(); row++) { // travesing col
-                    if (a[row][j] != 0) {          // // Leaving any element which is already 0
+                    if (a[row][j] != 0) { // // Leaving any element which is already 0
                         a[row][j] = INT_MIN;
                     }
                 }
-
             }
         }
     }
 
-    for (int i = 0 ; i < a.size() ; i++) {
-        for (int j = 0 ; j < a[i].size(); j++) {
+    for (int i = 0; i < a.size(); i++) {
+        for (int j = 0; j < a[i].size(); j++) {
 
             if (a[i][j] == INT_MIN) // setting Zeroes to required rows and columns
                 a[i][j] = 0;
@@ -41,7 +44,8 @@ void SetZeros(vector<vector<int>> &a) {
 
 // Better way , TC: O(n*m), SC: O(n+m), Works for all given Constraints
 
-void SetZeros2(vector<vector<int>> &a) {
+void SetZeros2(vector<vector<int>>& a)
+{
     int row = a.size();
     int col = a[0].size();
 
@@ -70,7 +74,8 @@ void SetZeros2(vector<vector<int>> &a) {
 
 // Efficient way , TC: O(n*m), SC: O(1), Works for all given Constraints
 
-void SetZeros3(vector<vector<int>> &a) {
+void SetZeros3(vector<vector<int>>& a)
+{
 
     bool tempCol = 1;
     int row = a.size(), col = a[0].size();
@@ -98,29 +103,25 @@ void SetZeros3(vector<vector<int>> &a) {
     }
 }
 
-
-
 int main()
 {
-
-#ifdef PRINCE
-    freopen("debug.txt", "w", stderr);
-#endif
-
-    int row, col; cin >> row >> col;
+    int row, col;
+    cout << "Enter Row and Col: ";
+    cin >> row >> col;
 
     vector<vector<int>> a(row, vector<int>(col));
 
-    for (int i = 0 ; i < row ; i++) {
-        for (int j = 0 ; j < col ; j++) {
+    cout << "Enter matrix elements: " << nl;
+    for (int i = 0; i < row; i++) {
+        for (int j = 0; j < col; j++) {
             cin >> a[i][j];
         }
     }
 
     SetZeros3(a);
 
-    for (int i = 0 ; i < row ; i++) {
-        for (int j = 0 ; j < col ; j++) {
+    for (int i = 0; i < row; i++) {
+        for (int j = 0; j < col; j++) {
             cout << a[i][j] << " ";
         }
         cout << endl;
