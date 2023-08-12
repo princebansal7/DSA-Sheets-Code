@@ -1,9 +1,10 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #define nl "\n"
 #define ll long long
 
-void nextPermutation(vector<int> &arr) {
+void nextPermutation(vector<int>& arr)
+{
     int n = arr.size();
     int ind1, ind2;
     for (ind1 = n - 2; ind1 >= 0; ind1--) {
@@ -13,8 +14,7 @@ void nextPermutation(vector<int> &arr) {
     }
     if (ind1 < 0) {
         reverse(arr.begin(), arr.end());
-    }
-    else {
+    } else {
         for (ind2 = n - 1; ind2 > ind1; ind2--) {
             if (arr[ind2] > arr[ind1]) {
                 break;
@@ -36,15 +36,18 @@ void nextPermutation(vector<int> &arr) {
 
 int main()
 {
-    int n; cin >> n;
+    int n;
+    cin >> n;
     vector<int> arr(n);
 
-    for (int i = 0 ; i < n ; i++)
+    for (int i = 0; i < n; i++)
         cin >> arr[i];
 
     nextPermutation(arr);
 
-    for (int x : arr) cout << x << " ";
+    for (int x : arr)
+        cout << x << " ";
+    cout << nl;
 
     return 0;
 }
