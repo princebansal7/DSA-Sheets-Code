@@ -1,16 +1,11 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-
-
+#define nl '\n'
 
 int main()
 {
-
-#ifndef ONLINE_JUDGE
-    freopen("debug.txt", "w", stderr);
-#endif
-
-    int n; cin >> n;
+    int n;
+    cin >> n;
     vector<int> v(n);
 
     for (int i = 0; i < n; ++i)
@@ -35,7 +30,7 @@ int main()
         else if (v[i] < min)
             min = v[i];
     }
-    cout << "Min: " << min << "\nMax: " << max;
+    cout << "Min: " << min << "\nMax: " << max << nl;
 
     return 0;
 }

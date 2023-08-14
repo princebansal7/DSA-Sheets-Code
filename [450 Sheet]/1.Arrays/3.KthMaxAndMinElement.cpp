@@ -1,14 +1,10 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 int main()
 {
-
-#ifndef ONLINE_JUDGE
-    freopen("debug.txt", "w", stderr);
-#endif
-
-    int n, k; cin >> n >> k;
+    int n, k;
+    cin >> n >> k;
     vector<int> v(n);
 
     for (int i = 0; i < n; ++i)

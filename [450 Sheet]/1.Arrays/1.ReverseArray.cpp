@@ -1,36 +1,34 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
+#define nl '\n'
 
 int main()
 {
 
-#ifndef ONLINE_JUDGE
-	freopen("debug.txt", "w", stderr);
-#endif
+    int n;
+    cin >> n;
+    vector<int> v(n);
+    for (int i = 0; i < n; ++i)
+        cin >> v[i];
 
-	int n; cin >> n;
-	vector<int> v(n);
-	for (int i = 0; i < n; ++i)
-		cin >> v[i];
+    /*------WAY-1----------------
 
-	/*------WAY-1----------------
+    reverse(v.begin(), v.end());
 
-	reverse(v.begin(), v.end());
+    ---------------------------- */
 
-	---------------------------- */
+    /*----------WAY-2-------------*/
 
-	/*----------WAY-2-------------*/
+    for (int i = 0, j = n - 1; i < j; i++, j--) {
+        int temp = v[i];
+        v[i] = v[j];
+        v[j] = temp;
+    }
 
-	for (int i = 0, j = n - 1; i < j; i++, j--) {
-		int temp = v[i];
-		v[i] = v[j];
-		v[j] = temp;
-	}
+    for (int i = 0; i < n; ++i)
+        cout << v[i] << " ";
 
-	for (int i = 0; i < n; ++i)
-		cout << v[i] << " ";
+    cout << nl;
 
-
-
-	return 0;
+    return 0;
 }
