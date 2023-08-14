@@ -1,8 +1,8 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-
-void Union(vector<int> &v1, vector<int> &v2) {
+void Union(vector<int>& v1, vector<int>& v2)
+{
 
     /*_________WAY-1 (Storing 1 for unique and same values and printing whoes value is 1)__
 
@@ -30,20 +30,17 @@ void Union(vector<int> &v1, vector<int> &v2) {
 
     _______________________________________________________________________*/
 
-
     //_________WAY-2 (Efficient way)__________________
 
     cout << "Union of Given Arrays is:\n";
-    set<int>s;
+    set<int> s;
     int n = v1.size();
     int m = v2.size();
-    for (int i = 0; i < n; ++i)
-    {
+    for (int i = 0; i < n; ++i) {
         // if (s.find(v1[i]) == s.end())
         s.insert(v1[i]);
     }
-    for (int i = 0; i < m; ++i)
-    {
+    for (int i = 0; i < m; ++i) {
         // if (s.find(v2[i]) == s.end())
         s.insert(v2[i]);
     }
@@ -52,7 +49,8 @@ void Union(vector<int> &v1, vector<int> &v2) {
     cout << endl;
 }
 
-void interSection(vector<int> &v1, vector<int> &v2) {
+void interSection(vector<int>& v1, vector<int>& v2)
+{
 
     /*____WAY-1 [O(n*m)] (when given arrays are not sorted in Non-decreasing Order)_____
 
@@ -119,15 +117,12 @@ void interSection(vector<int> &v1, vector<int> &v2) {
     cout << endl;
     ________________________________________________________________________________*/
 
-
     /*____WAY-4 (for Unsorted array, works with unique Occurences in 2nd array)________________________________________________*/
-
 
     int n = v1.size();
     int m = v2.size();
 
     unordered_set<int> s;
-
 
     for (int i = 0; i < n; ++i)
         s.insert(v1[i]);
@@ -138,15 +133,12 @@ void interSection(vector<int> &v1, vector<int> &v2) {
         cout << x << " ";
     cout << endl;
 
-
     cout << "InterSection is:\n";
     for (int i = 0; i < m; i++) {
-        if (s.find(v2[i]) != s.end() ) {
+        if (s.find(v2[i]) != s.end()) {
             cout << v2[i] << " ";
         }
     }
-
-
 
     /*_____________________________________________________________________________
                     LeetCode problem 349:
@@ -202,11 +194,12 @@ void interSection(vector<int> &v1, vector<int> &v2) {
 int main()
 {
 
-#ifndef ONLINE_JUDGE
-    freopen("debug.txt", "w", stderr);
-#endif
+    // #ifndef ONLINE_JUDGE
+    //     freopen("debug.txt", "w", stderr);
+    // #endif
 
-    int n, m; cin >> n >> m;
+    int n, m;
+    cin >> n >> m;
     vector<int> v1(n), v2(m);
 
     for (int i = 0; i < n; ++i)
@@ -215,7 +208,6 @@ int main()
     for (int i = 0; i < m; ++i)
         cin >> v2[i];
     //____________________________________________
-
 
     Union(v1, v2);
 
@@ -227,7 +219,6 @@ int main()
 
     // for (int i = 0; i < m; ++i)
     //     cout << v2[i] << " ";
-
 
     return 0;
 }

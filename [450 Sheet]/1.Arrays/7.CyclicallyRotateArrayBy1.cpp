@@ -1,4 +1,4 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
 void RotateByOne(int a[], int n)
@@ -7,7 +7,6 @@ void RotateByOne(int a[], int n)
 
     for (int i = 0; i < n - 1; i++)
         swap(a[i], a[n - 1]);
-
 
     /*__________Way-2_________________________
 
@@ -22,16 +21,16 @@ void RotateByOne(int a[], int n)
 int main()
 {
 
-#ifndef ONLINE_JUDGE
-    freopen("debug.txt", "w", stderr);
-#endif
+    // #ifndef ONLINE_JUDGE
+    //     freopen("debug.txt", "w", stderr);
+    // #endif
 
-    int n; cin >> n ;
+    int n;
+    cin >> n;
     int a[50];
 
     for (int i = 0; i < n; ++i)
         cin >> a[i];
-
 
     RotateByOne(a, n);
 

@@ -1,14 +1,15 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 int main()
 {
 
-#ifndef ONLINE_JUDGE
-    freopen("debug.txt", "w", stderr);
-#endif
+    // #ifndef ONLINE_JUDGE
+    //     freopen("debug.txt", "w", stderr);
+    // #endif
 
-    int n; cin >> n;
+    int n;
+    cin >> n;
     vector<int> v(n);
 
     for (int i = 0; i < n; ++i)
@@ -19,7 +20,7 @@ int main()
     int j = 0;
     for (int i = 0; i < n; i++) {
         if (v[i] < 0) {
-            if (i != j)  // just for avoiding un-necessary comparisons
+            if (i != j) // just for avoiding un-necessary comparisons
                 swap(v[i], v[j]);
             j++;
         }
@@ -27,7 +28,6 @@ int main()
 
     for (int i = 0; i < n; ++i)
         cout << v[i] << " ";
-
 
     return 0;
 }

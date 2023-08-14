@@ -1,6 +1,5 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-
 
 /*________WAY-1___________________________________
 
@@ -39,7 +38,8 @@ _________________________________________________*/
 
 /*__________________WAY-2 (TC: O(n), SC: O(n))_________________________*/
 
-void rotate(vector<int> &a, int n, int k) {
+void rotate(vector<int>& a, int n, int k)
+{
 
     vector<int> temp(n);
 
@@ -51,21 +51,17 @@ void rotate(vector<int> &a, int n, int k) {
     a = temp;
 }
 
-
 int main()
 {
-
-#ifndef ONLINE_JUDGE
-    freopen("debug.txt", "w", stderr);
-#endif
-
-    int n; cin >> n ;
+    int n;
+    cin >> n;
     vector<int> a(n);
 
     for (int i = 0; i < n; ++i)
         cin >> a[i];
 
-    int k; cin >> k;
+    int k;
+    cin >> k;
 
     rotate(a, n, k);
 

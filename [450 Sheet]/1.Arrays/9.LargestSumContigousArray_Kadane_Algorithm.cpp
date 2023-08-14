@@ -1,7 +1,8 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-long long maxSubarraySum(vector<int> &a, int n) {
+long long maxSubarraySum(vector<int>& a, int n)
+{
 
     /*___________Naive Approach_________________________
 
@@ -23,8 +24,6 @@ long long maxSubarraySum(vector<int> &a, int n) {
 
     // ___________________________________________________*/
 
-
-
     // Kadane's Algo
 
     //------------WAY-1-------------------------------------
@@ -43,7 +42,7 @@ long long maxSubarraySum(vector<int> &a, int n) {
     return maxi;
     //---------------------------------------------------------*/
 
-//-------------------WAY-2--------------------------------
+    //-------------------WAY-2--------------------------------
 
     // long long maxsum = a[0];
     // long long currsum = a[0];
@@ -55,16 +54,15 @@ long long maxSubarraySum(vector<int> &a, int n) {
     // return maxsum;
 }
 
-
-
 int main()
 {
 
-#ifndef ONLINE_JUDGE
-    freopen("debug.txt", "w", stderr);
-#endif
+    // #ifndef ONLINE_JUDGE
+    //     freopen("debug.txt", "w", stderr);
+    // #endif
 
-    int n; cin >> n ;
+    int n;
+    cin >> n;
     vector<int> a(n);
 
     for (int i = 0; i < n; ++i)
