@@ -17,6 +17,5 @@ int main()
             cnt++;
         n = n / 10;
     }
-
     cout << cnt << nl;
 }
