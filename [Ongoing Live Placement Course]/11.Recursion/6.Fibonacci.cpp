@@ -17,8 +17,7 @@ int fibUsingForLoop(int n)
         return n;
 
     int prev1 = 0, prev2 = 1;
-    for (int i = 2; i <= n; i++)
-    {
+    for (int i = 2; i <= n; i++) {
         int curr = prev1 + prev2;
         prev1 = prev2;
         prev2 = curr;
@@ -34,7 +33,7 @@ int main()
     cin >> n;
 
     cout << n << "th Fibonacci number is: " << fib(n) << nl;
-    cout << n << "th Fibonacci number is: " << fibUsingForLoop(n) << nl;
+    cout << n + 1 << "th Fibonacci number is (series starts from 0): " << fibUsingForLoop(n) << nl;
 
     return 0;
 }
