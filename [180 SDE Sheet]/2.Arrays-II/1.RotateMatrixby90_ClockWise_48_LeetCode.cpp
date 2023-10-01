@@ -1,8 +1,9 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-#define fast_io ios_base::sync_with_stdio(false);cin.tie(NULL);
+#define fast_io                       \
+    ios_base::sync_with_stdio(false); \
+    cin.tie(NULL);
 #define nl "\n"
-
 
 /*______________Non Efficient Way to take Transpose_____________________
 void TransPose(vector<vector<int>> &arr) {
@@ -18,7 +19,8 @@ ________________________________________________________________________*/
 
 //________Efficeint way to take Transpose (Save CPU cycles)______________
 
-void TransPose(vector<vector<int>> &arr) {
+void TransPose(vector<vector<int>>& arr)
+{
 
     int n = arr.size();
 
@@ -35,7 +37,8 @@ void TransPose(vector<vector<int>> &arr) {
            and put it in the second last column of the matrix and so on...
 */
 
-void rotateby90WAY1(vector<vector<int>>&arr) {
+void rotateby90WAY1(vector<vector<int>>& arr)
+{
     int n = arr.size();
     vector<vector<int>> rotated(n, vector<int>(n, 0));
 
@@ -61,7 +64,8 @@ void rotateby90WAY1(vector<vector<int>>&arr) {
            and so on...
 */
 
-void rotateby90WAY2(vector<vector<int>> &arr) {
+void rotateby90WAY2(vector<vector<int>>& arr)
+{
 
     int n = arr.size(); // as given matrix is n*n
 
@@ -84,7 +88,8 @@ void rotateby90WAY2(vector<vector<int>> &arr) {
   2. Then reverse each row individually
 */
 
-void rotateby90WAY3(vector<vector<int>> &arr) {
+void rotateby90WAY3(vector<vector<int>>& arr)
+{
 
     int n = arr.size(); // as given matrix is n*n
 
@@ -107,19 +112,18 @@ void rotateby90WAY3(vector<vector<int>> &arr) {
 
 int main()
 {
-    int  n; cin >> n;
+    int n;
+    cin >> n;
 
-    vector<vector<int>> arr(n, vector<int> (n));
+    vector<vector<int>> arr(n, vector<int>(n));
 
     for (int i = 0; i < n; i++)
         for (int j = 0; j < n; j++)
             cin >> arr[i][j];
 
-
-    cout << "After Rotating 90 deg:\n";
+    cout << "After Rotating 90 deg (Clockwise):\n";
 
     rotateby90WAY3(arr);
-
 
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++)

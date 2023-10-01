@@ -1,7 +1,8 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-vector<int> ValueEqualIndex(vector<int> &a, int n) {
+vector<int> ValueEqualIndex(vector<int>& a, int n)
+{
     vector<int> ans;
     for (int i = 0; i < n; i++) {
         if (a[i] == i + 1)
@@ -12,18 +13,15 @@ vector<int> ValueEqualIndex(vector<int> &a, int n) {
 
 int main()
 {
-
-#ifdef PRINCE
-    freopen("debug.txt", "w", stderr);
-#endif
-
-    int n; cin >> n;
+    int n;
+    cin >> n;
     vector<int> v(n), res;
-    for (int i = 0 ; i < n ; i++)
+    for (int i = 0; i < n; i++)
         cin >> v[i];
 
     res = ValueEqualIndex(v, n);
 
-    for (auto x : res) cout << x << " ";
+    for (auto x : res)
+        cout << x << " ";
     return 0;
 }

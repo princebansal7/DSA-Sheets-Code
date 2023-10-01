@@ -1,11 +1,14 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-#define fast_io ios_base::sync_with_stdio(false);cin.tie(NULL);
+#define fast_io                       \
+    ios_base::sync_with_stdio(false); \
+    cin.tie(NULL);
 #define nl "\n"
 
 //__Way-1__TC: O(n * sqrt(n))____________________
 
-bool isPrime(int n) {
+bool isPrime(int n)
+{
 
     if (n <= 1)
         return false;
@@ -17,7 +20,8 @@ bool isPrime(int n) {
     return true;
 }
 
-void countPrime(int n) {
+void countPrime(int n)
+{
     int count = 0;
 
     cout << "Prime numbers are:\n";
@@ -32,7 +36,8 @@ void countPrime(int n) {
 
 //__________way-2_(seive of eratosthenes) TC: O(n * log(log(n)))_________
 
-void Seive(int n) {
+void Seive(int n)
+{
 
     vector<bool> prime(n + 1, true);
     int count = 0;
@@ -51,20 +56,14 @@ void Seive(int n) {
     cout << nl << "Total: " << count << nl;
 }
 
-
 int main()
 {
-#ifdef PRINCE
-    freopen("debug.txt", "w", stderr);
-#endif
-    fast_io
-
-    int n; cin >> n;
+    int n;
+    cin >> n;
 
     // countPrime(n);
 
     Seive(n);
-
 
     return 0;
 }

@@ -1,7 +1,8 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-int rowWithMax1s(vector<vector<int> > arr, int n, int m) {
+int rowWithMax1s(vector<vector<int>> arr, int n, int m)
+{
 
     /*_______________Way-1__[ O(n*m)]_________________________
 
@@ -23,9 +24,9 @@ int rowWithMax1s(vector<vector<int> > arr, int n, int m) {
            return index;
     _________________________________________________________*/
 
-//______________WAy-2 [Two Pointer approach O(m+n) ]____
+    //______________WAy-2 [Two Pointer approach O(m+n) ]____
 
-// As Given Matrix is row vise Sorted.
+    // As Given Matrix is row vise Sorted.
 
     int index = -1;
     int i = 0, j = m - 1;
@@ -33,31 +34,24 @@ int rowWithMax1s(vector<vector<int> > arr, int n, int m) {
         if (arr[i][j] == 1) {
             index = i;
             j--;
-        }
-        else
+        } else
             i++;
     }
     return index;
-
 }
 
 int main()
 {
+    int row, col;
+    cin >> row >> col;
 
-// #ifndef ONLINE_JUDGE
-//     freopen("debug.txt", "w", stderr);
-// #endif
+    vector<vector<int>> mat(row, vector<int>(col, 0));
 
-    int row, col; cin >> row >> col;
-
-    vector<vector<int>> mat(row, vector<int> (col, 0));
-
-    for (int i = 0 ; i < row ; i++)
-        for (int j = 0 ; j < col ; j++)
+    for (int i = 0; i < row; i++)
+        for (int j = 0; j < col; j++)
             cin >> mat[i][j];
 
     cout << rowWithMax1s(mat, row, col);
 
     return 0;
 }
-

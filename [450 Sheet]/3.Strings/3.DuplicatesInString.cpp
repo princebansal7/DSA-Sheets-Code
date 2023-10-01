@@ -1,8 +1,7 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-
-void DuplicatesInString(string &s)
+void DuplicatesInString(string& s)
 {
     // Hashing Solution
 
@@ -20,11 +19,6 @@ void DuplicatesInString(string &s)
 
 int main()
 {
-
-#ifdef PRINCE
-    freopen("debug.txt", "w", stderr);
-#endif
-
     string s;
 
     getline(cin, s);

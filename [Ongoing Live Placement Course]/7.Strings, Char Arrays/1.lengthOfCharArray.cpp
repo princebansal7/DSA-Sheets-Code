@@ -1,9 +1,12 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-#define fast_io ios_base::sync_with_stdio(false);cin.tie(NULL);
+#define fast_io                       \
+    ios_base::sync_with_stdio(false); \
+    cin.tie(NULL);
 #define nl "\n"
 
-int getLength(char str[]) {
+int getLength(char str[])
+{
 
     int count = 0;
 
@@ -15,10 +18,6 @@ int getLength(char str[]) {
 
 int main()
 {
-    fast_io
-#ifdef PRINCE
-    freopen("debug.txt", "w", stderr);
-#endif
     int length;
 
     char str[50];

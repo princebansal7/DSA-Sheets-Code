@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 // int first(vector<int> &arr, int n , int k) {
@@ -38,25 +38,20 @@ using namespace std;
 
 int main()
 {
-
-#ifdef PRINCE
-    freopen("debug.txt", "w", stderr);
-#endif
-
-    int n; cin >> n;
+    int n;
+    cin >> n;
     vector<int> v(n), ans;
-    for (int i = 0 ; i < n ; i++)
+    for (int i = 0; i < n; i++)
         cin >> v[i];
 
-    int k; cin >> k;
+    int k;
+    cin >> k;
     // ans.push_back(first(v, n, k));
     // ans.push_back(last(v, n, k));
 
     // for (auto x : ans) cout << x << " ";
 
-
     //____Using lower_bound() and upper_bound() functions__
-
 
     auto it1 = lower_bound(v.begin(), v.end(), k);
     auto it2 = upper_bound(v.begin(), v.end(), k);
@@ -65,7 +60,6 @@ int main()
         cout << -1 << " " << -1;
     else
         cout << (it1 - v.begin()) << " " << (it2 - 1 - v.begin()) << endl;
-
 
     return 0;
 }

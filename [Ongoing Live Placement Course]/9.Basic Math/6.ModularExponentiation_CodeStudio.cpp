@@ -1,6 +1,8 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-#define fast_io ios_base::sync_with_stdio(false);cin.tie(NULL);
+#define fast_io                       \
+    ios_base::sync_with_stdio(false); \
+    cin.tie(NULL);
 #define nl "\n"
 
 /* Way-1: Naive Method,(Works for Small input only)________________________
@@ -15,7 +17,8 @@ int ModularExp(int x, int n, int m) {
 }
 ______________________________________________________________*/
 
-int ModularExp(int x, int n, int m) {
+int ModularExp(int x, int n, int m)
+{
 
     int ans = 1;
     while (n > 0) {
@@ -28,12 +31,10 @@ int ModularExp(int x, int n, int m) {
     return ans;
 }
 
-
 int main()
 {
-    fast_io
-
-    int x, n, m; cin >> x >> n >> m;
+    int x, n, m;
+    cin >> x >> n >> m;
 
     int ans = ModularExp(x, n, m);
 

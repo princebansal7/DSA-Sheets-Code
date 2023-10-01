@@ -1,6 +1,8 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-#define fast_io ios_base::sync_with_stdio(false);cin.tie(NULL);
+#define fast_io                       \
+    ios_base::sync_with_stdio(false); \
+    cin.tie(NULL);
 #define nl "\n"
 
 /*___Way-1_____________________________________________________
@@ -9,7 +11,8 @@ using namespace std;
         2. Swap 1st column with last column , 2nd column with 2nd last column and so on...
 */
 
-void TransPose(vector<vector<int>> &arr) {
+void TransPose(vector<vector<int>>& arr)
+{
 
     int n = arr.size();
 
@@ -19,8 +22,8 @@ void TransPose(vector<vector<int>> &arr) {
                 swap(arr[i][j], arr[j][i]);
 }
 
-
-void rotateby90(vector<vector<int>> &arr) {
+void rotateby90(vector<vector<int>>& arr)
+{
 
     int n = arr.size(); // as given matrix is n*n
 
@@ -43,7 +46,8 @@ void rotateby90(vector<vector<int>> &arr) {
   2. reverse each row individually
 */
 
-void rotateby90WAY2(vector<vector<int>> &arr) {
+void rotateby90WAY2(vector<vector<int>>& arr)
+{
 
     int n = arr.size(); // as given matrix is n*n
 
@@ -56,24 +60,20 @@ void rotateby90WAY2(vector<vector<int>> &arr) {
 
 int main()
 {
-#ifdef PRINCE
-    freopen("debug.txt", "w", stderr);
-#endif
     fast_io
 
-    int  n; cin >> n;
+        int n;
+    cin >> n;
 
-    vector<vector<int>> arr(n, vector<int> (n));
+    vector<vector<int>> arr(n, vector<int>(n));
 
     for (int i = 0; i < n; i++)
         for (int j = 0; j < n; j++)
             cin >> arr[i][j];
 
-
     cout << "After Rotating 90 deg:\n";
 
     rotateby90WAY2(arr);
-
 
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++)

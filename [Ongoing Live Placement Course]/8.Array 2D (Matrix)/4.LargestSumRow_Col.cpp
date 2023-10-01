@@ -1,14 +1,17 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-#define fast_io ios_base::sync_with_stdio(false);cin.tie(NULL);
+#define fast_io                       \
+    ios_base::sync_with_stdio(false); \
+    cin.tie(NULL);
 #define nl "\n"
 
 const int R = 3;
 const int C = 4;
 
-void print(int a[][C]) {
+void print(int a[][C])
+{
     cout << "Matrix is:\n";
-    for (int row = 0 ; row <  R; row++) {
+    for (int row = 0; row < R; row++) {
         for (int col = 0; col < C; col++)
             cout << a[row][col] << " ";
         cout << nl;
@@ -16,11 +19,12 @@ void print(int a[][C]) {
     cout << nl;
 }
 
-void LargestSumRow(int a[][C]) {
+void LargestSumRow(int a[][C])
+{
 
     int MaxRow;
     int MaxSum = -1;
-    for (int row = 0 ; row <  R; row++) {
+    for (int row = 0; row < R; row++) {
         int RowSum = 0;
         int index;
         for (int col = 0; col < C; col++) {
@@ -34,15 +38,15 @@ void LargestSumRow(int a[][C]) {
         }
     }
     cout << "Row Having Max sum is: ";
-    cout << MaxRow  << nl << nl;
+    cout << MaxRow << nl << nl;
 }
 
-
-void LargestSumCol(int a[][C]) {
+void LargestSumCol(int a[][C])
+{
 
     int MaxSum = -1;
     int MaxCol = -1;
-    for (int col = 0 ; col <  C; col++) {
+    for (int col = 0; col < C; col++) {
         int ColSum = 0;
         int index;
         for (int row = 0; row < R; row++) {
@@ -61,16 +65,13 @@ void LargestSumCol(int a[][C]) {
 
 int main()
 {
-#ifdef PRINCE
-    freopen("debug.txt", "w", stderr);
-#endif
     fast_io
 
-    int a[R][C];
+        int a[R][C];
 
     // Taking input Row-wise
 
-    for (int row = 0 ; row <  R; row++)
+    for (int row = 0; row < R; row++)
         for (int col = 0; col < C; col++)
             cin >> a[row][col];
 
@@ -79,7 +80,6 @@ int main()
     LargestSumRow(a);
 
     LargestSumCol(a);
-
 
     return 0;
 }

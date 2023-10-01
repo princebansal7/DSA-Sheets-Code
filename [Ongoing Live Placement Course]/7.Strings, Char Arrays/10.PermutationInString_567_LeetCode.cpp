@@ -1,6 +1,8 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-#define fast_io ios_base::sync_with_stdio(false);cin.tie(NULL);
+#define fast_io                       \
+    ios_base::sync_with_stdio(false); \
+    cin.tie(NULL);
 #define nl "\n"
 
 /*
@@ -8,7 +10,8 @@ using namespace std;
     permutation of s1, or false otherwise.
 */
 
-bool checkEqual( int a[], int b[]) {
+bool checkEqual(int a[], int b[])
+{
     for (int i = 0; i < 26; i++) {
         if (a[i] != b[i])
             return false;
@@ -16,9 +19,10 @@ bool checkEqual( int a[], int b[]) {
     return true;
 }
 
-bool checkInclusion(string s1, string s2) {
+bool checkInclusion(string s1, string s2)
+{
 
-    int count1[26] = {0};
+    int count1[26] = { 0 };
 
     for (int i = 0; i < s1.length(); i++) {
         int index = s1[i] - 'a';
@@ -27,7 +31,7 @@ bool checkInclusion(string s1, string s2) {
 
     int windowSize = s1.length();
     int i = 0;
-    int count2[26] = {0};
+    int count2[26] = { 0 };
 
     while (i < windowSize && i < s2.length()) {
         int index = s2[i] - 'a';
@@ -54,17 +58,15 @@ bool checkInclusion(string s1, string s2) {
             return true;
     }
     return false;
-
 }
 
 int main()
 {
-#ifdef PRINCE
-    freopen("debug.txt", "w", stderr);
-#endif
     fast_io
 
-    string s1, s2; cin >> s1 >> s2;
+        string s1,
+        s2;
+    cin >> s1 >> s2;
 
     if (checkInclusion(s1, s2))
         cout << "true" << nl;

@@ -193,11 +193,6 @@ void interSection(vector<int>& v1, vector<int>& v2)
 
 int main()
 {
-
-    // #ifndef ONLINE_JUDGE
-    //     freopen("debug.txt", "w", stderr);
-    // #endif
-
     int n, m;
     cin >> n >> m;
     vector<int> v1(n), v2(m);

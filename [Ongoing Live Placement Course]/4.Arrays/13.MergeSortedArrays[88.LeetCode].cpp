@@ -1,7 +1,8 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-void mergeSorted(vector<int> &a, int m, vector<int> &b, int n) {
+void mergeSorted(vector<int>& a, int m, vector<int>& b, int n)
+{
 
     int i = 0, j = 0;
     vector<int> ans;
@@ -10,8 +11,7 @@ void mergeSorted(vector<int> &a, int m, vector<int> &b, int n) {
 
         if (a[i] < b[j]) {
             ans.push_back(a[i++]);
-        }
-        else {
+        } else {
             ans.push_back(b[j++]);
         }
     }
@@ -24,7 +24,8 @@ void mergeSorted(vector<int> &a, int m, vector<int> &b, int n) {
     a = ans;
 }
 
-void print(vector<int> &ans) {
+void print(vector<int>& ans)
+{
     for (int x : ans)
         cout << x << " ";
     cout << endl;
@@ -32,21 +33,16 @@ void print(vector<int> &ans) {
 
 int main()
 {
-
-#ifdef PRINCE
-    freopen("debug.txt", "w", stderr);
-#endif
-
     int n, m;
 
     cin >> m >> n;
 
     vector<int> a(m + n), b(n);
 
-    for (int i = 0 ; i < m ; i++)
+    for (int i = 0; i < m; i++)
         cin >> a[i];
 
-    for (int i = 0 ; i < n ; i++)
+    for (int i = 0; i < n; i++)
         cin >> b[i];
 
     // print(a);

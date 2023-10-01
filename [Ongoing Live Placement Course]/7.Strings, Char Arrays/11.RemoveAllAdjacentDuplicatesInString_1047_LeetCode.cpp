@@ -1,9 +1,12 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-#define fast_io ios_base::sync_with_stdio(false);cin.tie(NULL);
+#define fast_io                       \
+    ios_base::sync_with_stdio(false); \
+    cin.tie(NULL);
 #define nl "\n"
 
-string removeAdjacentDup(string s) {
+string removeAdjacentDup(string s)
+{
 
     string ans;
     for (char ch : s) {
@@ -17,12 +20,10 @@ string removeAdjacentDup(string s) {
 
 int main()
 {
-#ifdef PRINCE
-    freopen("debug.txt", "w", stderr);
-#endif
     fast_io
 
-    string s; cin >> s;
+        string s;
+    cin >> s;
 
     cout << removeAdjacentDup(s) << nl;
 

@@ -56,11 +56,6 @@ long long maxSubarraySum(vector<int>& a, int n)
 
 int main()
 {
-
-    // #ifndef ONLINE_JUDGE
-    //     freopen("debug.txt", "w", stderr);
-    // #endif
-
     int n;
     cin >> n;
     vector<int> a(n);

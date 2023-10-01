@@ -1,12 +1,12 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define set_bits __builtin_popcountll
 
 int main()
 {
-
-    int n; cin >> n;
+    int n;
+    cin >> n;
 
     //___WAY-1 [ Using Inbuilt function __builtin_popcountll() ]
 

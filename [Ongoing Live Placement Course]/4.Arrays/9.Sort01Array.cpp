@@ -1,7 +1,8 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-void Sort01(vector<int> &v, int n) {
+void Sort01(vector<int>& v, int n)
+{
     /*-------------WAy-1------------------------
 
     sort(v.begin(), v.end());
@@ -64,17 +65,12 @@ void Sort01(vector<int> &v, int n) {
             right--;
         }
     }
-
 }
 
 int main()
 {
-
-#ifndef ONLINE_JUDGE
-    freopen("debug.txt", "w", stderr);
-#endif
-
-    int n; cin >> n;
+    int n;
+    cin >> n;
     vector<int> v(n);
 
     for (int i = 0; i < n; ++i)

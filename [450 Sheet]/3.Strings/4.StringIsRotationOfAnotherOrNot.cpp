@@ -1,8 +1,8 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-
-bool CheckRotation(string &s1, string &s2) {
+bool CheckRotation(string& s1, string& s2)
+{
 
     // checking whether s2 string is rotation of s1 string or not
 
@@ -21,19 +21,13 @@ bool CheckRotation(string &s1, string &s2) {
 
 int main()
 {
-
-#ifdef PRINCE
-    freopen("debug.txt", "w", stderr);
-#endif
-
     string s1, s2;
 
     cin >> s1 >> s2;
 
     if (CheckRotation(s1, s2)) {
         cout << "Yes " << s2 << " is rotation of " << s1;
-    }
-    else
+    } else
         cout << "No, " << s2 << " is not rotation of " << s1;
 
     return 0;

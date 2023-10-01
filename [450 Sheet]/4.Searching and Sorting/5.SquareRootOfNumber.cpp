@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 /*___________________WAY-1_____________________
@@ -20,7 +20,8 @@ _________________________________________________*/
 
 //______Using Binary Search_______________________
 
-int floorSqrt(int x) {
+int floorSqrt(int x)
+{
 
     if (x == 0)
         return x;
@@ -37,8 +38,7 @@ int floorSqrt(int x) {
             return mid;
         if (Sqt > x) {
             end = mid - 1;
-        }
-        else {
+        } else {
             start = mid + 1;
             ans = mid;
         }
@@ -46,8 +46,10 @@ int floorSqrt(int x) {
     return ans;
 }
 
-int main() {
-    int n; cin >> n;
+int main()
+{
+    int n;
+    cin >> n;
     cout << floorSqrt(n) << endl;
     return 0;
 }
@@ -85,13 +87,16 @@ long long int floorSqrt(long long int x) {
     return (int)ans;
 }
 
+_____________________________________________________*/
 
-
-int main() {
-    int t; cin >> t;
+int main()
+{
+    int t;
+    cin >> t;
 
     while (t--) {
-        long long n; cin >> n;
+        long long n;
+        cin >> n;
         cout << floorSqrt(n) << "\n";
     }
 
@@ -121,6 +126,3 @@ int main() {
 //     0 <= N <= 10 ^ 16
 
 //     Time Limit: 1 sec.
-
-
-_____________________________________________________*/

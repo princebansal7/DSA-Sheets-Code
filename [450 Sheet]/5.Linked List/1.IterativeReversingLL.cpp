@@ -1,17 +1,19 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 struct Node {
     int data;
-    Node *next;
+    Node* next;
 
-    Node(int x) {
+    Node(int x)
+    {
         data = x;
         next = NULL;
     }
 };
 
-void printList(Node *head) {   // TC: O(n) , SC: O(1)
+void printList(Node* head)
+{ // TC: O(n) , SC: O(1)
 
     if (head == NULL) {
         cout << "Empty List!!\n";
@@ -28,9 +30,10 @@ void printList(Node *head) {   // TC: O(n) , SC: O(1)
 
 //_____WAY-1 (Using Temp Array)_____________________________________
 
-Node *ReverseList(Node *head) {
+Node* ReverseList(Node* head)
+{
     vector<int> temp;
-    Node *curr = head;
+    Node* curr = head;
 
     if (head == NULL)
         return NULL;
@@ -42,7 +45,7 @@ Node *ReverseList(Node *head) {
 
     curr = head;
 
-//______Way-1___________
+    //______Way-1___________
 
     for (curr = head; curr != NULL; curr = curr->next) {
         curr->data = temp.back();
@@ -66,36 +69,32 @@ Node *ReverseList(Node *head) {
 
 //___________WAY-2 (Changing the links itself)____________________________
 
-Node *ReverseListEffi(Node *head) {
-    Node *curr = head;
-    Node *prev = NULL;
+Node* ReverseListEffi(Node* head)
+{
+    Node* curr = head;
+    Node* prev = NULL;
 
     while (curr != NULL) {
-        Node *temp = curr->next;
+        Node* temp = curr->next;
         curr->next = prev;
         prev = curr;
         curr = temp;
     }
-    return prev;  // prev is new head
+    return prev; // prev is new head
 }
-
 
 int main()
 {
-
-#ifdef PRINCE
-    freopen("debug.txt", "w", stderr);
-#endif
-
-    int t; cin >> t;  // for test cases
+    int t;
+    cin >> t; // for test cases
     int cnt = 1;
 
     while (t--) {
 
+        cout << "TEST CASE " << cnt << ":-------------------"
+             << "\n\n";
 
-        cout << "TEST CASE " << cnt << ":-------------------" << "\n\n";
-
-        Node *head = NULL;
+        Node* head = NULL;
 
         head = new Node(10);
         head->next = new Node(20);
@@ -104,7 +103,6 @@ int main()
         head->next->next->next->next = new Node(50);
         head->next->next->next->next->next = new Node(60);
 
-
         // cout << "[WAY-1] Before Reversing ";
         // printList(head);
 
@@ -112,7 +110,6 @@ int main()
 
         // cout << "[WAY-1] After Reversing ";
         // printList(head);
-
 
         cout << "[WAY-2] Before Reversing ";
         printList(head);
@@ -123,8 +120,7 @@ int main()
         printList(head);
 
         cout << endl;
-        cnt++;   // ignore
-
+        cnt++; // ignore
     }
     return 0;
 }

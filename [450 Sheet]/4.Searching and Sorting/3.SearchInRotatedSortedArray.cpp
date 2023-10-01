@@ -1,11 +1,12 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 // Seaching element in sorted Rotated (right) array
 
-int pivotElement(vector<int> &v) {
+int pivotElement(vector<int>& v)
+{
 
-//_________Works for Both sorted-rotated and sorted array___________________
+    //_________Works for Both sorted-rotated and sorted array___________________
 
     int n = v.size();
     int s = 0, e = n - 1;
@@ -44,7 +45,8 @@ int pivotElement(vector<int> &v) {
     _________________________________________________________________________*/
 }
 
-int BinarySearch(vector<int> &v, int s, int e, int target) {
+int BinarySearch(vector<int>& v, int s, int e, int target)
+{
 
     int ans = -1;
 
@@ -62,35 +64,31 @@ int BinarySearch(vector<int> &v, int s, int e, int target) {
             e = mid - 1;
     }
     return ans;
-
 }
 
 int main()
 {
-
-#ifdef PRINCE
-    freopen("debug.txt", "w", stderr);
-#endif
     int ans = -1;
-    int n; cin >> n;
+    int n;
+    cin >> n;
 
     vector<int> v;
 
     for (int i = 0; i < n; i++) {
-        int x; cin >> x;
+        int x;
+        cin >> x;
         v.push_back(x);
     }
 
-    int target; cin >> target;
+    int target;
+    cin >> target;
 
     int minElementIndex = pivotElement(v);
 
-
-    if (v[minElementIndex] <= target && target <= v[n - 1])     // => search in Right Part
+    if (v[minElementIndex] <= target && target <= v[n - 1]) // => search in Right Part
         ans = BinarySearch(v, minElementIndex, n - 1, target);
-    else                                                        // => Search in Left Part
+    else // => Search in Left Part
         ans = BinarySearch(v, 0, minElementIndex - 1, target);
-
 
     if (ans != -1)
         cout << target << " present at " << ans << " index" << endl;

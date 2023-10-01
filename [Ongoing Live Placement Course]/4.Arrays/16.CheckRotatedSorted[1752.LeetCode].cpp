@@ -1,8 +1,8 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-
-bool CheckSortedRotated(int a[], int n) {
+bool CheckSortedRotated(int a[], int n)
+{
 
     int count = 0;
 
@@ -22,16 +22,12 @@ bool CheckSortedRotated(int a[], int n) {
 
 int main()
 {
-
-#ifdef PRINCE
-    freopen("debug.txt", "w", stderr);
-#endif
-
-    int n; cin >> n;
+    int n;
+    cin >> n;
 
     int a[n];
 
-    for (int i = 0 ; i < n ; i++)
+    for (int i = 0; i < n; i++)
         cin >> a[i];
 
     CheckSortedRotated(a, n);

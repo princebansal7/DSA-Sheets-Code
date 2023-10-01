@@ -1,6 +1,8 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-#define fast_io ios_base::sync_with_stdio(false);cin.tie(NULL);
+#define fast_io                       \
+    ios_base::sync_with_stdio(false); \
+    cin.tie(NULL);
 #define nl "\n"
 
 /* When only 1-1 whitespaces are allowed__________________________________
@@ -9,8 +11,11 @@ eg:
     input:  "the sky is blue"
     output: "blue is sky the"
 */
+
 // WAY-1 (using Stack)
-string reverseWords1(string s) {
+
+string reverseWords1(string s)
+{
     stack<string> st;
 
     string temp = "", ans = "";
@@ -18,8 +23,7 @@ string reverseWords1(string s) {
     for (int i = 0; i < s.length(); i++) {
         if (s[i] != ' ') {
             temp += s[i];
-        }
-        else {
+        } else {
             st.push(temp);
             temp = "";
         }
@@ -45,8 +49,7 @@ string reverseWords2(string s)
             temp.push_back(str);
             temp.push_back(" ");
             str = "";
-        }
-        else
+        } else
             str += s[i];
     }
     temp.push_back(str);
@@ -63,7 +66,8 @@ string reverseWords2(string s)
     output:  "example good a"
 */
 
-string reverseWords3(string s) {
+string reverseWords3(string s)
+{
 
     vector<string> res;
 
@@ -92,22 +96,18 @@ string reverseWords3(string s) {
         string revTemp = res[i];
         final += revTemp;
 
-        if (i > 0)      // putting spaces
+        if (i > 0) // putting spaces
             final += " ";
-
     }
     return final;
 }
 
-
 int main()
 {
-#ifdef PRINCE
-    freopen("debug.txt", "w", stderr);
-#endif
     fast_io
 
-    string s; getline(cin, s);
+        string s;
+    getline(cin, s);
 
     cout << reverseWords3(s) << nl;
 

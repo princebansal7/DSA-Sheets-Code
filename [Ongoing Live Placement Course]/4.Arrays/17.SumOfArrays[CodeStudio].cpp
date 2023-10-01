@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 /*____________Way-1 (Efficeint)____________________________________________________
@@ -65,58 +65,51 @@ __________________________________________________________________*/
 
 //_____________________WAY-2__________________________________________
 
-vector<int> SumOfArray(vector<int> &a, int n, vector<int> &b, int m) {
+vector<int> SumOfArray(vector<int>& a, int n, vector<int>& b, int m)
+{
 
+    long long int sum1 = 0;
+    long long int sum2 = 0;
 
-	long long int sum1 = 0;
-	long long int sum2 = 0;
+    // Sum of 1st array = represeting as number1
+    for (int i = 0; i < n; i++) {
+        sum1 = sum1 * 10 + a[i];
+    }
 
-	// Sum of 1st array = represeting as number1
-	for (int i = 0; i < n; i++) {
-		sum1 = sum1 * 10 + a[i];
-	}
+    // Sum of 2nd array = represeting as number2
+    for (int i = 0; i < m; i++) {
+        sum2 = sum2 * 10 + b[i];
+    }
 
-	// Sum of 2nd array = represeting as number2
-	for (int i = 0; i < m; i++) {
-		sum2 = sum2 * 10 + b[i];
-	}
+    long long int ans = sum1 + sum2; // Total Sum
 
+    vector<int> res;
 
-	long long int ans = sum1 + sum2; // Total Sum
-
-	vector<int> res;
-
-	while (ans != 0) {
-		res.push_back(ans % 10);
-		ans = ans / 10;
-	}
-	reverse(res.begin(), res.end());
-	return res;
+    while (ans != 0) {
+        res.push_back(ans % 10);
+        ans = ans / 10;
+    }
+    reverse(res.begin(), res.end());
+    return res;
 }
-
 
 int main()
 {
+    int n, m;
+    cin >> n >> m;
+    vector<int> a(n), b(m), ans;
 
-#ifdef PRINCE
-	freopen("debug.txt", "w", stderr);
-#endif
+    for (int i = 0; i < n; i++)
+        cin >> a[i];
 
-	int n, m; cin >> n >> m;
-	vector<int> a(n), b(m), ans;
+    for (int i = 0; i < m; i++)
+        cin >> b[i];
 
-	for (int i = 0 ; i < n ; i++)
-		cin >> a[i];
+    cout << "Sum is:\n";
+    ans = SumOfArray(a, n, b, m);
 
-	for (int i = 0 ; i < m ; i++)
-		cin >> b[i];
+    for (int i = 0; i < ans.size(); i++)
+        cout << ans[i] << " ";
 
-	cout << "Sum is:\n";
-	ans = SumOfArray(a, n, b, m);
-
-	for (int i = 0 ; i < ans.size() ; i++)
-		cout << ans[i] << " ";
-
-
-	return 0;
+    return 0;
 }

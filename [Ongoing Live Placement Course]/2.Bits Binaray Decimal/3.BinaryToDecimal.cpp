@@ -1,14 +1,9 @@
-#include<iostream>
 #include <cmath>
+#include <iostream>
 using namespace std;
 
 int main()
 {
-
-#ifdef PRINCE
-    freopen("debug.txt", "w", stderr);
-#endif
-
     string bits;
     cin >> bits;
 
@@ -19,7 +14,6 @@ int main()
     }
 
     cout << bits << " -> " << ans << endl;
-
 
     /* Enter Bit pattern as number
         int n; cin >> n;
@@ -50,7 +44,6 @@ int main()
         }
         cout << temp << " -> " << ans;
        _____________________________________*/
-
 
     return 0;
 }

@@ -1,7 +1,8 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-int countSquares(int N) {
+int countSquares(int N)
+{
 
     int count = 0;
     long long i = 1;
@@ -14,12 +15,8 @@ int countSquares(int N) {
 
 int main()
 {
-
-#ifdef PRINCE
-    freopen("debug.txt", "w", stderr);
-#endif
-
-    int n; cin >> n;
+    int n;
+    cin >> n;
 
     cout << countSquares(n);
 

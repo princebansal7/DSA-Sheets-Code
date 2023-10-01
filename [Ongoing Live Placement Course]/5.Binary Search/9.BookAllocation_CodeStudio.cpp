@@ -1,7 +1,8 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-bool isPossible(vector<int> &a, int n, int m, int mid) {
+bool isPossible(vector<int>& a, int n, int m, int mid)
+{
     // This is Important function
 
     int student = 1;
@@ -10,21 +11,20 @@ bool isPossible(vector<int> &a, int n, int m, int mid) {
     for (int i = 0; i < n; i++) {
         if (pageSum + a[i] <= mid) {
             pageSum += a[i]; // keep the sum
-        }
-        else {
+        } else {
             student++;
 
             if (student > m || a[i] > mid)
                 return false;
 
             pageSum = a[i]; // starting again from new student and page's sum
-
         }
     }
     return true;
 }
 
-int allocateBooks(vector<int> &a, int n, int m) {
+int allocateBooks(vector<int>& a, int n, int m)
+{
     int s = 0;
     int sum = 0;
     int res = -1;
@@ -38,8 +38,7 @@ int allocateBooks(vector<int> &a, int n, int m) {
         if (isPossible(a, n, m, mid)) {
             res = mid;
             e = mid - 1;
-        }
-        else
+        } else
             s = mid + 1;
     }
     return res;
@@ -47,22 +46,18 @@ int allocateBooks(vector<int> &a, int n, int m) {
 
 int main()
 {
-
-#ifdef PRINCE
-    freopen("debug.txt", "w", stderr);
-#endif
-
-    int n; cin >> n;
+    int n;
+    cin >> n;
     vector<int> pages(n);
 
-    for (int i = 0 ; i < n ; i++)
+    for (int i = 0; i < n; i++)
         cin >> pages[i];
 
-    int student; cin >> student;
+    int student;
+    cin >> student;
 
     /* You have to allocate the book to ‘m’ students
      such that the maximum number of pages assigned to a student is minimum. */
-
 
     cout << "Allocated pages are: " << allocateBooks(pages, n, student);
     return 0;

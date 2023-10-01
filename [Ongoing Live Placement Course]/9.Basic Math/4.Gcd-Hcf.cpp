@@ -1,11 +1,14 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-#define fast_io ios_base::sync_with_stdio(false);cin.tie(NULL);
+#define fast_io                       \
+    ios_base::sync_with_stdio(false); \
+    cin.tie(NULL);
 #define nl "\n"
 
 // Way-1.Basic Method, TC: O(min(a,b))___________________
 
-int findGCD(int a, int b) {
+int findGCD(int a, int b)
+{
     int m = min(a, b);
     for (int gcd = m; gcd >= 1; gcd--) {
         if (a % gcd == 0 && b % gcd == 0)
@@ -14,11 +17,12 @@ int findGCD(int a, int b) {
     return 1;
 }
 
-//Way-2.Euclid's Algo for GCD (Iterative way)__________________________
+// Way-2.Euclid's Algo for GCD (Iterative way)__________________________
 
 // gcd(a,b) = gcd(a-b,b) or gcd(a%b,b) , a>b
 
-int gcd(int a, int b) {
+int gcd(int a, int b)
+{
     if (a == 0)
         return b;
     if (b == 0)
@@ -39,14 +43,11 @@ int gcd(int a, int b) {
 
 int main()
 {
-#ifdef PRINCE
-    freopen("debug.txt", "w", stderr);
-#endif
-    fast_io
 
-    int a, b; cin >> a >> b;
+    int a, b;
+    cin >> a >> b;
 
-    cout << __gcd(a, b) << nl;   // using Inbuilt gcd function
+    cout << __gcd(a, b) << nl; // using Inbuilt gcd function
     cout << findGCD(a, b) << nl;
     cout << gcd(a, b) << nl;
 

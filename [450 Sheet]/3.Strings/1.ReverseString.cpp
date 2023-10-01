@@ -1,7 +1,8 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-void reverseString(string &s) {
+void reverseString(string& s)
+{
 
     //___________WAY-1________________
 
@@ -9,8 +10,6 @@ void reverseString(string &s) {
     for (int i = 0, j = n - 1; i < j; i++, j--) {
         swap(s[i], s[j]);
     }
-
-
 
     /*______________WAY-2___________
 
@@ -21,11 +20,6 @@ void reverseString(string &s) {
 
 int main()
 {
-
-#ifdef PRINCE
-    freopen("debug.txt", "w", stderr);
-#endif
-
     string s;
 
     getline(cin, s);

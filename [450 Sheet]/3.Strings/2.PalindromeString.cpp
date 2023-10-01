@@ -1,8 +1,7 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-
-bool isPalindrome(string &s)
+bool isPalindrome(string& s)
 {
     /*____WAY-1__________TC:O(n), SC: O(n)__________________
 
@@ -57,11 +56,6 @@ bool isPalindrome(string &s)
 
 int main()
 {
-
-#ifdef PRINCE
-    freopen("debug.txt", "w", stderr);
-#endif
-
     string s;
 
     getline(cin, s);

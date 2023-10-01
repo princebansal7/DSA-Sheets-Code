@@ -1,19 +1,21 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-#define fast_io ios_base::sync_with_stdio(false);cin.tie(NULL);
+#define fast_io                       \
+    ios_base::sync_with_stdio(false); \
+    cin.tie(NULL);
 #define nl "\n"
 #define ll long long
 
 //_____Way-1_____SC: O(|s|)_____________________________
 
-string ReplaceSpaces1(string &str) {
+string ReplaceSpaces1(string& str)
+{
 
     string s;
     for (int i = 0; i < str.length(); i++) {
         if (str[i] != ' ') {
             s += str[i];
-        }
-        else {
+        } else {
             s + "@40";
 
             /*     Or
@@ -29,28 +31,20 @@ string ReplaceSpaces1(string &str) {
 }
 //_______WAY-2__________________________________________
 
-
-string ReplaceSpaces2(string &str) {
+string ReplaceSpaces2(string& str)
+{
 
     for (int i = 0; i < str.length(); i++) {
         if (str[i] == ' ') {
 
             str.replace(i, 1, "@40"); // replace(pos,len,string2)
-
         }
     }
     return str;
 }
 
-
 int main()
 {
-
-    fast_io
-#ifdef PRINCE
-    freopen("debug.txt", "w", stderr);
-#endif
-
     string str, ans;
 
     getline(cin, str);

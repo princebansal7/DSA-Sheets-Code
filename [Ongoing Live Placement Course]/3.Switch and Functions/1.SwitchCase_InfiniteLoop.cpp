@@ -1,10 +1,10 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
 int main()
 {
-
-    int n; cin >> n;
+    int n;
+    cin >> n;
     while (1) {
         switch (n) {
         case 1:

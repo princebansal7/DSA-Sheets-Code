@@ -1,7 +1,8 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-int median(vector<vector<int>> &mat, int r, int c) {
+int median(vector<vector<int>>& mat, int r, int c)
+{
 
     /*________WAY-1 [O(n*m) and Auxillary space O(n*m)]_____________________________
 
@@ -22,29 +23,19 @@ int median(vector<vector<int>> &mat, int r, int c) {
     ________________________________________________________________________________*/
 
     //_____________WAY-2_________________________________________________________
-
-
-
 }
-
 
 int main()
 {
+    int row, col;
+    cin >> row >> col;
 
-// #ifndef ONLINE_JUDGE
-//     freopen("debug.txt", "w", stderr);
-// #endif
+    vector<vector<int>> mat(row, vector<int>(col, 0));
 
-    int row, col; cin >> row >> col;
-
-    vector<vector<int>> mat(row, vector<int> (col, 0));
-
-    for (int i = 0 ; i < row ; i++)
-        for (int j = 0 ; j < col ; j++)
+    for (int i = 0; i < row; i++)
+        for (int j = 0; j < col; j++)
             cin >> mat[i][j];
-
 
     cout << "Median is: " << median(mat, row, col);
     return 0;
 }
-

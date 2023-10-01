@@ -1,13 +1,16 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-#define fast_io ios_base::sync_with_stdio(false);cin.tie(NULL);
+#define fast_io                       \
+    ios_base::sync_with_stdio(false); \
+    cin.tie(NULL);
 #define nl "\n"
 
-//1.___Basic Understanding based tried solution:
+// 1.___Basic Understanding based tried solution:
 
-void compress1(vector<char>& chars) {
+void compress1(vector<char>& chars)
+{
 
-    map<char, int>mp;  // can use unordered_map too, as we just want the length of compressed string
+    map<char, int> mp; // can use unordered_map too, as we just want the length of compressed string
 
     for (char ch : chars) {
         mp[ch]++;
@@ -19,7 +22,7 @@ void compress1(vector<char>& chars) {
 
     string s;
     for (auto x : mp) {
-        if (x.second == 1) {    // kyuki, agr 1 hi character hai, toh sirf character chahiye bas, uska count nhi
+        if (x.second == 1) { // kyuki, agr 1 hi character hai, toh sirf character chahiye bas, uska count nhi
             s += x.first;
             continue;
         }
@@ -27,14 +30,13 @@ void compress1(vector<char>& chars) {
         s += to_string(x.second);
     }
 
-
     cout << "\nCompressed string is: " << s << endl;
     cout << "Length is: " << s.size() << endl;
 
     // return s.size();
 }
 
-//2.______Partial Correct code: (after a little better understanding)_______________
+// 2.______Partial Correct code: (after a little better understanding)_______________
 
 /* Incorrect because:
 
@@ -45,9 +47,10 @@ void compress1(vector<char>& chars) {
         expected: ["a","3","b","2","a","2"]
 
 */
-int compress2(vector<char>& chars) {
+int compress2(vector<char>& chars)
+{
 
-    map<char, int>mp;
+    map<char, int> mp;
 
     for (char ch : chars) {
         mp[ch]++;
@@ -76,9 +79,10 @@ int compress2(vector<char>& chars) {
     return s.size();
 }
 
-//3.__Efficient & Correct Solution_____________________
+// 3.__Efficient & Correct Solution_____________________
 
-int compress3(vector<char> &a) {
+int compress3(vector<char>& a)
+{
 
     int i = 0;
     int index = 0;
@@ -111,7 +115,7 @@ int compress3(vector<char> &a) {
             }
         }
 
-        i = j;   // to start from next substring
+        i = j; // to start from next substring
     }
 
     // for (int i = 0; i < index; i++)
@@ -122,15 +126,13 @@ int compress3(vector<char> &a) {
 
 int main()
 {
-#ifdef PRINCE
-    freopen("debug.txt", "w", stderr);
-#endif
     fast_io
 
-    int n; cin >> n;
+        int n;
+    cin >> n;
     vector<char> a(n);
 
-    for (int i = 0 ; i < n ; i++)
+    for (int i = 0; i < n; i++)
         cin >> a[i];
 
     // compress1(a);

@@ -1,6 +1,8 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-#define fast_io ios_base::sync_with_stdio(false);cin.tie(NULL);
+#define fast_io                       \
+    ios_base::sync_with_stdio(false); \
+    cin.tie(NULL);
 #define nl "\n"
 
 //_______way-1__Using Two Pointer, TC: O(m+n)_________________________________
@@ -11,7 +13,8 @@ using namespace std;
 
 */
 
-bool Search1(vector<vector<int>>& matrix, int target) {
+bool Search1(vector<vector<int>>& matrix, int target)
+{
 
     int row = matrix.size();
     int col = matrix[0].size();
@@ -29,7 +32,6 @@ bool Search1(vector<vector<int>>& matrix, int target) {
     return false;
 }
 
-
 //______way-2__Using Binary Search,TC: O(log(m*n))_________
 
 /*
@@ -37,7 +39,8 @@ bool Search1(vector<vector<int>>& matrix, int target) {
       linearlly, it form linear sorted 1D array
 */
 
-bool Search2(vector<vector<int>>& matrix, int target) {
+bool Search2(vector<vector<int>>& matrix, int target)
+{
 
     int row = matrix.size();
     int col = matrix[0].size();
@@ -62,23 +65,22 @@ bool Search2(vector<vector<int>>& matrix, int target) {
     return false;
 }
 
-
 int main()
 {
-#ifdef PRINCE
-    freopen("debug.txt", "w", stderr);
-#endif
     fast_io
 
-    int  n, m; cin >> n >> m;
+        int n,
+        m;
+    cin >> n >> m;
 
-    vector<vector<int>> arr(n, vector<int> (m));
+    vector<vector<int>> arr(n, vector<int>(m));
 
     for (int i = 0; i < n; i++)
         for (int j = 0; j < m; j++)
             cin >> arr[i][j];
 
-    int val; cin >> val;
+    int val;
+    cin >> val;
 
     bool ans = Search2(arr, val);
 

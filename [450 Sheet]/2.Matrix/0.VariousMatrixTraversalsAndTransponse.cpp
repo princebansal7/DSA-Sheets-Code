@@ -1,13 +1,14 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-void SimpleTraversal(vector<vector<int>> &mat, int row, int col) {
+void SimpleTraversal(vector<vector<int>>& mat, int row, int col)
+{
 
     vector<int> ans;
 
     for (int i = 0; i < row; i++) {
         for (int j = 0; j < col; j++)
-            ans.push_back(mat[i][j]);    // can directly print here too
+            ans.push_back(mat[i][j]); // can directly print here too
     }
 
     cout << "Linear Traversal is:\n ";
@@ -17,16 +18,16 @@ void SimpleTraversal(vector<vector<int>> &mat, int row, int col) {
     cout << "\n\n";
 }
 
-void SnakeTraversal(vector<vector<int>> &mat, int row, int col) {
+void SnakeTraversal(vector<vector<int>>& mat, int row, int col)
+{
 
     vector<int> ans;
 
     for (int i = 0; i < row; i++) {
-        if ( i % 2 == 0) {
+        if (i % 2 == 0) {
             for (int j = 0; j < col; j++)
-                ans.push_back(mat[i][j]);  // can directly print here too
-        }
-        else {
+                ans.push_back(mat[i][j]); // can directly print here too
+        } else {
             for (int j = col - 1; j >= 0; j--)
                 ans.push_back(mat[i][j]); // can directly print here too
         }
@@ -39,8 +40,8 @@ void SnakeTraversal(vector<vector<int>> &mat, int row, int col) {
     cout << "\n\n";
 }
 
-void BoundryTraversal(vector<vector<int>> &mat, int row, int col) {
-
+void BoundryTraversal(vector<vector<int>>& mat, int row, int col)
+{
 
     cout << "Boundry Traversal is:\n ";
     // Corner Cases
@@ -48,12 +49,10 @@ void BoundryTraversal(vector<vector<int>> &mat, int row, int col) {
     if (row == 1) { // given matrix have only 1 row
         for (int j = 0; j < col; j++)
             cout << mat[0][j] << " ";
-    }
-    else if (col == 1) { // given matrix have only 1 column
+    } else if (col == 1) { // given matrix have only 1 column
         for (int i = 0; i < row; i++)
             cout << mat[i][0] << " ";
-    }
-    else {
+    } else {
 
         // printing top row (left to right)
         for (int j = 0; j < col; j++)
@@ -72,11 +71,10 @@ void BoundryTraversal(vector<vector<int>> &mat, int row, int col) {
             cout << mat[i][0] << " ";
     }
     cout << "\n\n";
-
 }
 
-
-void TransPonse(vector<vector<int>> &mat, int row, int col) {
+void TransPonse(vector<vector<int>>& mat, int row, int col)
+{
 
     if (row != col) {
         cout << "Not A Square Matrix\n";
@@ -111,7 +109,7 @@ void TransPonse(vector<vector<int>> &mat, int row, int col) {
             swap(temp[i][j], temp[j][i]);
         }
     }
-    //printing
+    // printing
 
     for (int i = 0; i < row; i++) {
         for (int j = 0; j < col; j++)
@@ -123,13 +121,13 @@ void TransPonse(vector<vector<int>> &mat, int row, int col) {
 
 int main()
 {
+    int row, col;
+    cin >> row >> col;
 
-    int row, col; cin >> row >> col;
+    vector<vector<int>> mat(row, vector<int>(col));
 
-    vector<vector<int>> mat(row, vector<int> (col));
-
-    for (int i = 0 ; i < row ; i++)
-        for (int j = 0 ; j < col ; j++)
+    for (int i = 0; i < row; i++)
+        for (int j = 0; j < col; j++)
             cin >> mat[i][j];
 
     SimpleTraversal(mat, row, col);
@@ -138,9 +136,7 @@ int main()
 
     BoundryTraversal(mat, row, col);
 
-    TransPonse(mat, row, col);  // Must be Square matrix
-
+    TransPonse(mat, row, col); // Must be Square matrix
 
     return 0;
 }
-

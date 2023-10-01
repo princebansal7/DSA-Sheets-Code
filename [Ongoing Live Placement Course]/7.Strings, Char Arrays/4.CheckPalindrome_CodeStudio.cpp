@@ -1,10 +1,12 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-#define fast_io ios_base::sync_with_stdio(false);cin.tie(NULL);
+#define fast_io                       \
+    ios_base::sync_with_stdio(false); \
+    cin.tie(NULL);
 #define nl "\n"
 
-
-bool check(string &temp) {
+bool check(string& temp)
+{
 
     int start = 0, end = temp.length() - 1;
 
@@ -15,7 +17,8 @@ bool check(string &temp) {
     return 1;
 }
 
-bool isPalindrome(string s) {
+bool isPalindrome(string s)
+{
 
     if (s == " ")
         return true;
@@ -28,11 +31,9 @@ bool isPalindrome(string s) {
         if ((ch >= 'A' and s[i] <= 'Z')) {
             ch = ch - 'A' + 'a';
             temp.push_back(ch);
-        }
-        else if (ch >= 'a' and s[i] <= 'z') {
+        } else if (ch >= 'a' and s[i] <= 'z') {
             temp.push_back(ch);
-        }
-        else if (ch >= '0' and s[i] <= '9') {
+        } else if (ch >= '0' and s[i] <= '9') {
             temp.push_back(ch);
         }
     }
@@ -41,15 +42,9 @@ bool isPalindrome(string s) {
 
 int main()
 {
-
-    fast_io
-#ifdef PRINCE
-    freopen("debug.txt", "w", stderr);
-#endif
-
     string s;
 
-    getline(cin, s);  // for string input with spaces
+    getline(cin, s); // for string input with spaces
 
     if (isPalindrome(s))
         cout << "true" << nl;

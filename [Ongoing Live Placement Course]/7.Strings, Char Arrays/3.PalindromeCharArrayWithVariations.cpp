@@ -1,9 +1,12 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-#define fast_io ios_base::sync_with_stdio(false);cin.tie(NULL);
+#define fast_io                       \
+    ios_base::sync_with_stdio(false); \
+    cin.tie(NULL);
 #define nl "\n"
 
-int getLength(char str[]) {
+int getLength(char str[])
+{
 
     int count = 0;
 
@@ -13,7 +16,8 @@ int getLength(char str[]) {
     return count;
 }
 
-bool isPalindrome1(char str[], int n) {   // Case-Sensitive (basic)
+bool isPalindrome1(char str[], int n)
+{ // Case-Sensitive (basic)
     int s = 0, e = n - 1;
 
     while (s < e) {
@@ -23,18 +27,20 @@ bool isPalindrome1(char str[], int n) {   // Case-Sensitive (basic)
     return true;
 }
 
-char toLowerCase(char ch) {
+char toLowerCase(char ch)
+{
 
     char ans;
-    if (ch >= 'A' && ch <= 'Z')  // if uppercase character => making it lowercase
+    if (ch >= 'A' && ch <= 'Z') // if uppercase character => making it lowercase
         ans = ch - 'A' + 'a';
-    else                        // => already Lowercase
+    else // => already Lowercase
         ans = ch;
 
     return ans;
 }
 
-bool isPalindrome2(char str[], int n) {   // Case - Insensitive (variation-1)
+bool isPalindrome2(char str[], int n)
+{ // Case - Insensitive (variation-1)
     int s = 0, e = n - 1;
 
     while (s < e) {
@@ -50,13 +56,6 @@ bool isPalindrome2(char str[], int n) {   // Case - Insensitive (variation-1)
 
 int main()
 {
-
-    fast_io
-#ifdef PRINCE
-    freopen("debug.txt", "w", stderr);
-#endif
-
-
     int length;
 
     char str[50];
@@ -65,16 +64,12 @@ int main()
 
     length = getLength(str);
 
-
-
     cout << "Palindrome [Case-Sensitive]: ";
 
     if (isPalindrome1(str, length))
         cout << "true" << nl;
     else
         cout << "false" << nl;
-
-
 
     cout << "Palindrome [Case-InSensitive]: ";
 

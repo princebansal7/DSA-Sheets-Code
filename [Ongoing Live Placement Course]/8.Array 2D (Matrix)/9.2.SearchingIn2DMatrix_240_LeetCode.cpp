@@ -1,11 +1,14 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-#define fast_io ios_base::sync_with_stdio(false);cin.tie(NULL);
+#define fast_io                       \
+    ios_base::sync_with_stdio(false); \
+    cin.tie(NULL);
 #define nl "\n"
 
 //_________Using Two Pointer, TC: O(m+n)_________________________________
 
-bool Search(vector<vector<int>>& matrix, int target) {
+bool Search(vector<vector<int>>& matrix, int target)
+{
 
     int rowSize = matrix.size();
     int colSize = matrix[0].size();
@@ -25,24 +28,22 @@ bool Search(vector<vector<int>>& matrix, int target) {
     return false;
 }
 
-
-
 int main()
 {
-#ifdef PRINCE
-    freopen("debug.txt", "w", stderr);
-#endif
     fast_io
 
-    int  n, m; cin >> n >> m;
+        int n,
+        m;
+    cin >> n >> m;
 
-    vector<vector<int>> arr(n, vector<int> (m));
+    vector<vector<int>> arr(n, vector<int>(m));
 
     for (int i = 0; i < n; i++)
         for (int j = 0; j < m; j++)
             cin >> arr[i][j];
 
-    int val; cin >> val;
+    int val;
+    cin >> val;
 
     bool ans = Search(arr, val);
 

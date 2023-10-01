@@ -1,6 +1,8 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-#define fast_io ios_base::sync_with_stdio(false);cin.tie(NULL);
+#define fast_io                       \
+    ios_base::sync_with_stdio(false); \
+    cin.tie(NULL);
 #define nl "\n"
 /*
     i/p:
@@ -13,7 +15,8 @@ using namespace std;
 
 //_______TC: O(row*col)_________________________
 
-vector<int> WavePrint(vector<vector<int>> &arr, int n, int m) {
+vector<int> WavePrint(vector<vector<int>>& arr, int n, int m)
+{
 
     vector<int> ans;
 
@@ -22,8 +25,7 @@ vector<int> WavePrint(vector<vector<int>> &arr, int n, int m) {
         if (col % 2 == 0) {
             for (int row = 0; row < n; row++)
                 ans.push_back(arr[row][col]);
-        }
-        else {
+        } else {
             for (int row = n - 1; row >= 0; row--)
                 ans.push_back(arr[row][col]);
         }
@@ -33,14 +35,13 @@ vector<int> WavePrint(vector<vector<int>> &arr, int n, int m) {
 
 int main()
 {
-#ifdef PRINCE
-    freopen("debug.txt", "w", stderr);
-#endif
     fast_io
 
-    int  n, m; cin >> n >> m;
+        int n,
+        m;
+    cin >> n >> m;
 
-    vector<vector<int>> arr(n, vector<int> (m));
+    vector<vector<int>> arr(n, vector<int>(m));
 
     for (int i = 0; i < n; i++)
         for (int j = 0; j < m; j++)
@@ -48,7 +49,8 @@ int main()
 
     vector<int> ans = WavePrint(arr, n, m);
 
-    for (int x : ans) cout << x << " ";
+    for (int x : ans)
+        cout << x << " ";
 
     return 0;
 }

@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void rotate(vector<int> &a, int k)
+void rotate(vector<int>& a, int k)
 {
 
     // Clockwise rotate => right rotation
@@ -9,8 +9,7 @@ void rotate(vector<int> &a, int k)
     int n = a.size();
     vector<int> temp(n);
 
-    for (int i = 0; i < n; i++)
-    {
+    for (int i = 0; i < n; i++) {
 
         temp[(i + k) % n] = a[i];
     }
@@ -19,11 +18,6 @@ void rotate(vector<int> &a, int k)
 
 int main()
 {
-
-#ifdef PRINCE
-    freopen("debug.txt", "w", stderr);
-#endif
-
     int n, k;
     cin >> n >> k;
     vector<int> a(n);
