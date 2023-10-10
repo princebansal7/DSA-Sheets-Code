@@ -392,7 +392,7 @@ DSA 450 Sheet, SDE 180 Sheet, Ongoing DSA Placement Course (Question Solutions)
 </details>
 
 <details>
-<summary>About Queues [ <a href="/[DSA-OOP]" target="_blank">Codes</a> ]</summary>
+<summary>About Queues [ <a href="[DSA-Object-Oriented-Style]/" target="_blank">Codes</a> ]</summary>
 
 <blockquote>
    - There are many variations of Queue:
