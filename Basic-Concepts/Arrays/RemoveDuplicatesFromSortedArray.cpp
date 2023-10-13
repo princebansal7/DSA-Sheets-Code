@@ -24,7 +24,7 @@ void removeDuplicates1(int* arr, int n)
     cout << nl;
 }
 
-// Effiecient Solution: O(n), SC: O(1)
+// Efficient Solution: O(n), SC: O(1)
 void removeDuplicates2(int* arr, int n)
 {
     int newSize = 1;
