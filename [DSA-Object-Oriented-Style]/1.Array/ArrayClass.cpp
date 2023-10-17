@@ -65,7 +65,7 @@ void Array::insertElement(int index, int data)
     } else if (index < 0 || index > lastIndex + 1) {
         cout << "Invalid Index !!" << nl;
     } else {
-        // shift data towards right (as array is left alligned)
+        // shift data towards right (as array is left aligned)
         for (int i = lastIndex; i >= index; i--) {
             ptr[i + 1] = ptr[i];
         }
@@ -214,10 +214,10 @@ int menu()
 
 void printExtraInfo(Array& arr)
 {
-    cout << nl << "___________Array Information___________________" << nl << nl;
+    cout << nl << "_______Array Information__________" << nl << nl;
 
     cout << "Capacity of Array is: " << arr.arrayCapacity() << nl;
-    cout << "Total Elements in Array (size): " << arr.countElement() << nl;
+    cout << "Total Elements in Array (Current size): " << arr.countElement() << nl;
     arr.show();
     cout << "Is Array Full: ";
     if (arr.isFull())
@@ -230,7 +230,7 @@ void printExtraInfo(Array& arr)
         cout << "YES" << nl;
     else
         cout << "NO" << nl;
-    cout << "________________________________________________" << nl << nl;
+    cout << "___________________________________________" << nl << nl;
 }
 
 int main()
