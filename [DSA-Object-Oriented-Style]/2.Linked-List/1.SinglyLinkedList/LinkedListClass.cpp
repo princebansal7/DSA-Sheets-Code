@@ -78,7 +78,7 @@ public:
             cout << "Empty Linked list" << nl;
         else {
             Node* temp1 = head; // will be pointing to last node (When list have atleast 2 nodes)
-            Node* temp2 = NULL; // will be pointing to 2nd last node (When list have atleast 2 nodes)
+            Node* temp2 = NULL; // will be pointing to 2 nd last node (When list have atleast 2 nodes)
 
             while (temp1->next != NULL) {
                 temp2 = temp1;
@@ -87,7 +87,7 @@ public:
             if (temp2 == NULL) // for case: if LL have only 1 node
                 head = NULL;
             else
-                temp2->next = NULL; // making 2nd last node as last node by assigning NULL
+                temp2->next = NULL; // case when LL have only 2 node: making 2nd last node as last node by assigning NULL
 
             delete temp1; // releasing last node's memory
         }
@@ -103,6 +103,38 @@ public:
             temp->next = NewNode;
         } else {
             cout << "Element not Found" << nl;
+        }
+    }
+
+    void insertBefore(int element, int value)
+    {
+        Node* temp = searchNode(element);
+
+        if (temp != NULL) { // If the element to insert before is found
+            Node* curr = head;
+            Node* prev = NULL;
+
+            // Traverse the list to find the node before the one to insert before
+            while (curr != temp) {
+                prev = curr;
+                curr = curr->next;
+            }
+
+            // Create the new node and set its data
+            Node* newNode = new Node;
+            newNode->data = value;
+
+            if (prev == NULL) {
+                // Inserting at the head of the list
+                newNode->next = head;
+                head = newNode;
+            } else {
+                // Inserting in the middle of the list
+                newNode->next = curr;
+                prev->next = newNode;
+            }
+        } else {
+            cout << "Element Not Found" << nl;
         }
     }
 

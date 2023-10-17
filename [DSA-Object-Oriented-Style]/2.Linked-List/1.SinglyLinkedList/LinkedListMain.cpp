@@ -36,6 +36,15 @@ int main()
     list.insertAfter(30, 69);
     list.printList();
 
+    list.insertBefore(20, 100);
+    list.printList();
+
+    list.insertBefore(40, 100);
+    list.printList();
+
+    list.insertBefore(30, 100);
+    list.printList();
+
     list.deleteSpec(99);
     list.printList();
 
