@@ -91,7 +91,7 @@ void DynamicArray::insertElement(int index, int data)
         if (lastIndex + 1 == capacity)
             doubleArray();
 
-        // shift data towards right (as Array is left alligned)
+        // shift data towards right (as Array is left aligned)
         for (int i = lastIndex; i >= index; i--) {
             ptr[i + 1] = ptr[i];
         }
