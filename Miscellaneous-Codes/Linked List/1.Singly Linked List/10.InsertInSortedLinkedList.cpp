@@ -1,17 +1,19 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 struct Node {
     int data;
-    Node *next;
+    Node* next;
 
-    Node(int x) {
+    Node(int x)
+    {
         data = x;
         next = NULL;
     }
 };
 
-void printList(Node *head) {   // TC: O(n) , SC: O(1)
+void printList(Node* head)
+{ // TC: O(n) , SC: O(1)
 
     if (head == NULL) {
         cout << "Empty List!!\n";
@@ -26,14 +28,14 @@ void printList(Node *head) {   // TC: O(n) , SC: O(1)
     cout << "\n\n";
 }
 
-
 //_________ My Way______________________________________________________________________________
 
-Node *InsertSorted(Node *head, int val) {
+Node* InsertSorted(Node* head, int val)
+{
 
-    Node *temp = new Node(val);
+    Node* temp = new Node(val);
 
-    if (head == NULL) {  // empty list => insert that new node
+    if (head == NULL) { // empty list => insert that new node
         head = temp;
         return head;
     }
@@ -43,17 +45,17 @@ Node *InsertSorted(Node *head, int val) {
         return temp;
     }
 
-    Node *curr = head;
+    Node* curr = head;
 
     while (curr->next != NULL) {
 
-        if (val < curr->next->data) {  // handling all the nodes
+        if (val < curr->next->data) { // handling all the nodes
             temp->next = curr->next;
             curr->next = temp;
             return head;
         }
         curr = curr->next;
-    }                               // at the end of while loop, curr is pointing to last node
+    } // at the end of while loop, curr is pointing to last node
 
     if (curr->next == NULL && temp->data > curr->data) { // handling case: where inserted value is greater than all of the values in linked list
         curr->next = temp;
@@ -64,11 +66,12 @@ Node *InsertSorted(Node *head, int val) {
 
 //__________A little short way_______________________________________________
 
-Node *InsertSortedShortWay(Node *head, int val) {
+Node* InsertSortedShortWay(Node* head, int val)
+{
 
-    Node *temp = new Node(val);
+    Node* temp = new Node(val);
 
-    if (head == NULL) {  // empty list => insert that new node
+    if (head == NULL) { // empty list => insert that new node
         head = temp;
         return head;
     }
@@ -78,12 +81,10 @@ Node *InsertSortedShortWay(Node *head, int val) {
         return temp;
     }
 
-    Node *curr = head;
+    Node* curr = head;
 
-    while (curr->next != NULL  &&  curr->next->data < val) {
-
+    while (curr->next != NULL && curr->next->data < val) {
         curr = curr->next;
-
     }
 
     temp->next = curr->next;
@@ -98,14 +99,15 @@ int main()
     freopen("debug.txt", "w", stderr);
 #endif
 
-    int t; cin >> t;  // for test cases
+    int t;
+    cin >> t; // for test cases
     int cnt = 1;
     while (t--) {
 
+        cout << "TEST CASE " << cnt << ":---------------------"
+             << "\n\n";
 
-        cout << "TEST CASE " << cnt << ":---------------------" << "\n\n";
-
-        Node *head = NULL;
+        Node* head = NULL;
 
         head = new Node(10);
         head->next = new Node(20);
@@ -113,7 +115,8 @@ int main()
         head->next->next->next = new Node(40);
         head->next->next->next->next = new Node(50);
 
-        int val; cin >> val;
+        int val;
+        cin >> val;
 
         cout << "Before: ";
         printList(head);
@@ -123,8 +126,7 @@ int main()
         cout << "After: ";
         printList(head);
 
-        cnt++;   // ignore
-
+        cnt++; // ignore
     }
     return 0;
 }

@@ -1,17 +1,19 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 struct Node {
     int data;
-    Node *next;
+    Node* next;
 
-    Node(int x) {
+    Node(int x)
+    {
         data = x;
         next = NULL;
     }
 };
 
-void printList(Node *head) {   // TC: O(n) , SC: O(1)
+void printList(Node* head)
+{ // TC: O(n) , SC: O(1)
 
     if (head == NULL) {
         cout << "Empty List!!\n";
@@ -28,10 +30,11 @@ void printList(Node *head) {   // TC: O(n) , SC: O(1)
 
 //_____Naive Way-1____________________________________
 
-int Middle(Node *head) {
+int Middle(Node* head)
+{
 
     int count = 0;
-    Node *curr = head;
+    Node* curr = head;
 
     if (head == NULL)
         return -1;
@@ -55,9 +58,10 @@ int Middle(Node *head) {
 
 //_______________Naive Way-2 (Better than above)________________________
 
-void printMiddle(Node *head) {
+void printMiddle(Node* head)
+{
     int count = 0;
-    Node *curr = NULL;
+    Node* curr = NULL;
 
     if (head == NULL)
         return;
@@ -75,7 +79,8 @@ void printMiddle(Node *head) {
 
 //_________Effiecient method - Way-3_(slow-fast pointer method)_______
 
-void EfficientMiddle(Node *head) {
+void EfficientMiddle(Node* head)
+{
 
     /* CONCEPT:
 
@@ -84,7 +89,7 @@ void EfficientMiddle(Node *head) {
         => when fast pointer reaches at end, slow pointer reaches at middle
 
         NOTE:
-        Odd Node LL:  when fast pointer reaches at last node ,stop and return slow pointer pointed node (that's our middle node)
+        Odd Node LL:  when fast pointer reaches at last node, stop and return slow pointer pointed node (that's our middle node)
         Even Node LL: when fast pointer reaches at NULL (i.e, after last node) ,stop and return slow pointer pointed node (that's our middle node)
     */
     if (head == NULL) {
@@ -106,14 +111,15 @@ int main()
     freopen("debug.txt", "w", stderr);
 #endif
 
-    int t; cin >> t;  // for test cases
+    int t;
+    cin >> t; // for test cases
     int cnt = 1;
     while (t--) {
 
+        cout << "TEST CASE " << cnt << ":---------------------"
+             << "\n\n";
 
-        cout << "TEST CASE " << cnt << ":---------------------" << "\n\n";
-
-        Node *head = NULL;
+        Node* head = NULL;
 
         head = new Node(10);
         head->next = new Node(20);
@@ -133,9 +139,8 @@ int main()
         cout << endl;
         cout << "[WAY-3] Middle of LL is: ";
         EfficientMiddle(head);
-
-        cnt++;   // ignore
-
+        cout << endl;
+        cnt++; // ignore
     }
     return 0;
 }
