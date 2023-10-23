@@ -58,7 +58,7 @@ void leftRotateByK2(int arr[], int n, int k)
     int left = 0;
     int right = n - 1;
 
-    if (k > size) // avoding edge case where number of rotation (k) is gretaer than array size
+    if (k > size) // avoiding edge case where number of rotation (k) is greater than array size
         k = k % size;
 
     // FOR LEFT ROTATION:-
