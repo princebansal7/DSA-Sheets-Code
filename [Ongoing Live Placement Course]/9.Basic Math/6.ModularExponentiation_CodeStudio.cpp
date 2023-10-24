@@ -5,9 +5,22 @@ using namespace std;
     cin.tie(NULL);
 #define nl "\n"
 
-/* Way-1: Naive Method,(Works for Small input only)________________________
+/*
+Formulae:
 
-int ModularExp(int x, int n, int m) {
+a % n => [0,(n-1)]
+(a + b) % m = a % m + b % m
+(a - b) % m = a % m - b % m
+(a * b) % m = a % m * b % m
+
+
+*/
+
+// Way-1: Naive Method,(Works for Small input only)____________
+// x^n
+
+int ModularExp1(int x, int n, int m)
+{
 
     int ans = 1;
     for (int i = 1; i <= n; i++)
@@ -15,9 +28,11 @@ int ModularExp(int x, int n, int m) {
     ans = ans % m;
     return ans;
 }
-______________________________________________________________*/
 
-int ModularExp(int x, int n, int m)
+// a^b  => (a^b/2)^2 => if b is even
+//      => (a^b/2)^2 * a => if be is odd
+
+int ModularExp2(int x, int n, int m)
 {
 
     int ans = 1;
@@ -36,7 +51,7 @@ int main()
     int x, n, m;
     cin >> x >> n >> m;
 
-    int ans = ModularExp(x, n, m);
+    int ans = ModularExp2(x, n, m);
 
     cout << ans << nl;
     cout << sizeof(1LL);
