@@ -10,6 +10,8 @@ using namespace std;
 
 class LLReverse : public LinkedList {
 private:
+    // Approach 1
+
     void reverse(Node* curr, Node* prev)
     {
         // base case
@@ -20,6 +22,19 @@ private:
         Node* temp = curr->next;
         reverse(temp, curr);
         curr->next = prev;
+    }
+
+    // Approach 2
+    Node* reverse2(Node* head)
+    {
+        if (head == NULL || head->next == NULL)
+            return head;
+
+        Node* smallListHead = reverse2(head->next);
+        head->next->next = head;
+        head->next = NULL;
+
+        return smallListHead;
     }
 
 public:
@@ -42,9 +57,15 @@ public:
 
     void reverseLLRecursion()
     {
-        Node* curr = head;
-        Node* prev = NULL;
-        reverse(curr, prev);
+        // Approach-1
+
+        // Node* curr = head;
+        // Node* prev = NULL;
+        // reverse(curr, prev);
+
+        // Approach-2
+
+        head = reverse2(head);
     }
 };
 
@@ -65,6 +86,9 @@ int main()
     l1.showLinkedList();
     cout << "After Reversing using Recursion: " << nl;
     l1.reverseLLRecursion();
+    l1.showLinkedList();
+
+    l1.insertAtEnd(100);
     l1.showLinkedList();
 
     return 0;
