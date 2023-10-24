@@ -10,7 +10,7 @@ using namespace std;
 
 class LLReverse : public LinkedList {
 private:
-    // Approach 1
+    // Approach 1: TC: O(N), SC: O(N) of function calls stack
 
     void reverse(Node* curr, Node* prev)
     {
@@ -24,7 +24,8 @@ private:
         curr->next = prev;
     }
 
-    // Approach 2
+    // Approach 2: TC: O(N), SC: O(N) of functions calls stack
+
     Node* reverse2(Node* head)
     {
         if (head == NULL || head->next == NULL)
