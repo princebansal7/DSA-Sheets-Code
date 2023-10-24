@@ -9,8 +9,22 @@ using namespace std;
 #define nl '\n'
 
 class LLReverse : public LinkedList {
+private:
+    void reverse(Node* curr, Node* prev)
+    {
+        // base case
+        if (curr == NULL) {
+            head = prev;
+            return;
+        }
+        Node* temp = curr->next;
+        reverse(temp, curr);
+        curr->next = prev;
+    }
 
 public:
+    // TC: O(N), SC: O(1)
+    // Iterative Solution
     void reverseLL()
     {
         Node* curr = head;
@@ -22,6 +36,15 @@ public:
             curr = temp;
         }
         head = prev;
+    }
+
+    // Recursive Solution
+
+    void reverseLLRecursion()
+    {
+        Node* curr = head;
+        Node* prev = NULL;
+        reverse(curr, prev);
     }
 };
 
@@ -39,6 +62,9 @@ int main()
     l1.showLinkedList();
     cout << "After Reversing: " << nl;
     l1.reverseLL();
+    l1.showLinkedList();
+    cout << "After Reversing using Recursion: " << nl;
+    l1.reverseLLRecursion();
     l1.showLinkedList();
 
     return 0;
