@@ -1,11 +1,12 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #define nl "\n"
 #define ll long long
 
 //__Naive Way__TC: O(n^3)____________________________________________
 
-int maxSubArraySum1(vector <int> & nums, vector <int> & subarray) {
+int maxSubArraySum1(vector<int>& nums, vector<int>& subarray)
+{
     int maxi = 0;
     int n = nums.size();
     if (n == 1) {
@@ -22,7 +23,6 @@ int maxSubArraySum1(vector <int> & nums, vector <int> & subarray) {
                 maxi = sum;
                 subarray.push_back(i);
                 subarray.push_back(j);
-
             }
         }
     }
@@ -31,7 +31,8 @@ int maxSubArraySum1(vector <int> & nums, vector <int> & subarray) {
 
 //__Better Way__TC: O(n^2)____________________________________________
 
-int maxSubArraySum2(vector <int> & nums) {
+int maxSubArraySum2(vector<int>& nums)
+{
     int maxi = 0;
     int n = nums.size();
 
@@ -48,11 +49,12 @@ int maxSubArraySum2(vector <int> & nums) {
     return maxi;
 }
 
-
-int main() {
-    int n; cin >> n;
+int main()
+{
+    int n;
+    cin >> n;
     vector<int> arr(n);
-    for (int i = 0 ; i < n ; i++)
+    for (int i = 0; i < n; i++)
         cin >> arr[i];
 
     // vector <int> subarray;
