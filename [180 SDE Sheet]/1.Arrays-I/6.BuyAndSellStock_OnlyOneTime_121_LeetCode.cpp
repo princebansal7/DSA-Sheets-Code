@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #define nl "\n"
 #define ll long long
@@ -15,8 +15,6 @@ int stockBuySell(vector<int> &a) {
     return (a[a.size() - 1] - a[0]);
 }
 ________________________________________*/
-
-
 
 /* [WAY-1]___Brute Force, TC: O(n^2), SC: O(1)____________
 
@@ -52,7 +50,8 @@ ________________________________________________________*/
 
 //__Optimised Solution_TC: O(n), SC: O(1)_______________
 
-int stockBuySell(vector<int>&a) {
+int stockBuySell(vector<int>& a)
+{
     int n = a.size();
     int maxProfit = 0;
     int minPrice = INT_MAX;
@@ -63,11 +62,13 @@ int stockBuySell(vector<int>&a) {
     return maxProfit;
 }
 
-int main() {
-    int n; cin >> n;
+int main()
+{
+    int n;
+    cin >> n;
     vector<int> a(n);
 
-    for (int i = 0 ; i < n ; i++) {
+    for (int i = 0; i < n; i++) {
         cin >> a[i];
     }
 
