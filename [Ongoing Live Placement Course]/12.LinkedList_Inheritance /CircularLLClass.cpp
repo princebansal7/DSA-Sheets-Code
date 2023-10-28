@@ -92,6 +92,7 @@ public:
                 while (curr->next != last) { // going till 2nd last node
                     curr = curr->next;
                 }
+
                 // curr is 2nd last node now.
 
                 curr->next = last->next; // curr is pointing to 1st node (=> curr now becomes the last node)
