@@ -50,6 +50,5 @@ int main()
     pair<int, int> ans = betterApproach(v, n);
     cout << "Second largest is: " << ans.first << nl;
     cout << "Second smallest is: " << ans.second << nl;
-
     return 0;
 }
