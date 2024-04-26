@@ -25,23 +25,27 @@ pair<int, int> betterApproach(vector<int>& v, int n)
     int smallest = v[0];
     int secondSmallest = smallest;
     for (int i = 1; i < n; i++) {
-        if (v[i] > largest) {
-            secondLargest = largest;
-            largest = v[i];
-        }
-        if (v[i] < smallest) {
-            secondSmallest = smallest;
-            smallest = v[i];
-            cout << "ss is: " << secondSmallest << nl;
-        }
+        largest = max(largest, v[i]);
+        smallest = min(smallest, v[i]);
     }
+    // cout << "largest is: " << largest << nl;
+    // cout << "smallest is: " << smallest << nl;
+    for (int i = 0; i < n; i++) {
+        if (secondLargest < v[i] && secondLargest != largest)
+            secondLargest = v[i];
+        if (secondSmallest > v[i] && secondSmallest != smallest)
+            secondSmallest = v[i];
+        cout << "Second largest is: " << secondLargest << nl;
+        cout << "Second smallest is: " << secondSmallest << nl;
+    }
+
     return { secondLargest, secondSmallest };
 }
 
 int main()
 {
-    vector<int> v { 7, 2, 3, 4, 44, 69, 12, 23, 5, 6 };
-    // vector<int> v { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+    // vector<int> v { 7, 2, 3, 4, 44, 69, 12, 23, 5, 6 };
+    vector<int> v { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
     int n = v.size();
     // pair<int, int> ans = bruteForceApproach(v, n);
     // cout << "Second largest is: " << ans.first << nl;
