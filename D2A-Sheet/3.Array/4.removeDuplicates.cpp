@@ -4,6 +4,7 @@
 */
 
 #include <iostream>
+#include <set>
 #include <vector>
 using namespace std;
 #define nl '\n'
@@ -46,7 +47,7 @@ void bruteForceApproach1(vector<int>& v, int n)
     vector<int> newArr;
     hashing(v, n);
     for (int i = 0; i < 101; i++) {
-        if (freq[i] == 1) {
+        if (freq[i] != 0) {
             newArr.push_back(i);
         }
     }
@@ -63,12 +64,28 @@ void bruteForceApproach1(vector<int>& v, int n)
 
 //-----------------------------------------------------------------
 
+void bruteForceApproach2(vector<int>& v, int n)
+{
+    set<int> st;
+    for (int i = 0; i < n; i++) {
+        st.insert(v[i]);
+    }
+    int newSize = st.size();
+
+    int index = 0;
+    for (int x : st) {
+        v[index++] = x;
+    }
+    printArr(v, newSize);
+}
+
 int main()
 {
-    vector<int> v { 1, 2, 2, 3, 4, 5, 5, 69 }; // given array will be sorted (non-decreasing)
+    vector<int> v { 1, 1, 1, 2, 2, 3, 3, 3, 3, 4 }; // given array will be sorted (non-decreasing)
     int n = v.size();
 
     bruteForceApproach1(v, n);
+    // bruteForceApproach2(v, n);
     // optimalApproach(v, n);
 
     return 0;
