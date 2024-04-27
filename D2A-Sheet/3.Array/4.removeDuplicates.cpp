@@ -79,14 +79,29 @@ void bruteForceApproach2(vector<int>& v, int n)
     printArr(v, newSize);
 }
 
+//-----------------------------------------------------------------
+
+void optimalApproach(vector<int> v, int n)
+{
+    int i = 0, j = 1;
+    for (int j = 1; j < n; j++) {
+        if (v[i] != v[j]) {
+            i++;
+            v[i] = v[j];
+        }
+    }
+    int newSize = i + 1;
+    printArr(v, newSize);
+}
+
 int main()
 {
-    vector<int> v { 1, 1, 1, 2, 2, 3, 3, 3, 3, 4 }; // given array will be sorted (non-decreasing)
+    vector<int> v { 1, 1, 1, 2, 3, 3, 3, 3, 4, 49 }; // given array will be sorted (non-decreasing)
     int n = v.size();
 
-    bruteForceApproach1(v, n);
+    // bruteForceApproach1(v, n);
     // bruteForceApproach2(v, n);
-    // optimalApproach(v, n);
+    optimalApproach(v, n);
 
     return 0;
 }
