@@ -83,7 +83,7 @@ void bruteForceApproach2(vector<int>& v, int n)
 
 void optimalApproach(vector<int> v, int n)
 {
-    int i = 0, j = 1;
+    int i = 0;
     for (int j = 1; j < n; j++) {
         if (v[i] != v[j]) {
             i++;
