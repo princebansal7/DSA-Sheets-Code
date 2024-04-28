@@ -49,16 +49,34 @@ void bruteForceApproach2(vector<int>& v, int n)
 
 void optimalApproach(vector<int> v, int n)
 {
+    // getting index, where 1st zero occurs
+    int zeroIndex = -1;
+    for (int i = 0; i < n; i++) {
+        if (v[i] == 0) {
+            zeroIndex = i;
+            break;
+        }
+    }
+    if (zeroIndex != -1) {
+        for (int nonZeroIndex = zeroIndex + 1; nonZeroIndex < n; nonZeroIndex++) {
+            if (v[nonZeroIndex] != 0) {
+                swap(v[zeroIndex], v[nonZeroIndex]);
+                zeroIndex++;
+            }
+        }
+    }
+    printArr(v, n);
 }
 
 int main()
 {
-    vector<int> v { 0, 0, 2, 3, 0, 4, 0, 1 };
+    vector<int> v { 0, 0, 2, 3, 0, 3, 4, 0, 1 };
+    // vector<int> v { 1, 2, 3, 4, 5, 6 };
     int n = v.size();
 
-    bruteForceApproach1(v, n);
+    // bruteForceApproach1(v, n);
     // bruteForceApproach2(v, n);
-    // optimalApproach(v, n);
+    optimalApproach(v, n);
 
     return 0;
 }
