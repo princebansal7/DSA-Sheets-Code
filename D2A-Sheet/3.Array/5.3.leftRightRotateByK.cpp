@@ -61,8 +61,7 @@ void reverseArr(vector<int>& v, int start, int end)
 
 void leftRightRotateByK2(vector<int> v, int n, char choice, int k)
 {
-    if (k > n)
-        k %= n;
+    k %= n;
     if (choice == 'L' || choice == 'l') {
         reverseArr(v, 0, k - 1); // reversing first k elements
         reverseArr(v, k, n - 1); // reversing remaining elements (n-k elements)
