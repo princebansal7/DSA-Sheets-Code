@@ -28,4 +28,6 @@ int main()
         cout << x.first << " " << x.second << nl;
     }
     cout << nl;
+
+    // test code
 }
