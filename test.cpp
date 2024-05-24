@@ -27,6 +27,5 @@ int main()
     for (pair<int, int>& x : sorted) {
         cout << x.first << " " << x.second << nl;
     }
-
     cout << nl;
 }
