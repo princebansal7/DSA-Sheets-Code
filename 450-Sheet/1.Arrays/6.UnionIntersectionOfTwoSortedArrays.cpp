@@ -87,7 +87,7 @@ void interSection(vector<int>& v1, vector<int>& v2)
     }
     __________________________________________________________________________*/
 
-    /*_________________WAY-3  max[O(n),O(m)](Here Also Arrays Must be are sorted)_____
+    /*_________________WAY-3  max[O(n),O(m)](Here Also Arrays Must be sorted)_____
 
     int n = v1.size();
     int m = v2.size();
