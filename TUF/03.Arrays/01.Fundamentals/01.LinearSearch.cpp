@@ -7,6 +7,7 @@
 using namespace std;
 #define nl '\n'
 
+// TC: O(N),  SC: O(1)
 int searchTarget(vector<int>& nums, int target)
 {
     for (int i = 0; i < nums.size(); i++) {

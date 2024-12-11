@@ -7,6 +7,7 @@
 using namespace std;
 #define nl '\n'
 
+// TC: O(N),  SC: O(1)
 int maxConsecutiveOnesBrute(vector<int>& nums)
 {
     int answer = 0, maxOnesCount = 0;
