@@ -12,7 +12,7 @@ using namespace std;
 // Output : [ 1, 4, 5, 2, 0, 0 ]
 
 // TC: O(N) + O(N), SC: O(N)
-void moveZeroesToEndBute(vector<int>& nums)
+void moveZeroesToEndBrute(vector<int>& nums)
 {
     vector<int> temp;
     int size = nums.size();
@@ -59,7 +59,7 @@ int main()
 {
     vector<int> nums = { 0, 1, 0, 2, 4, 5, 6, 7, 0, 9, 0, 10, 0 };
 
-    // moveZeroesToEndBute(nums);
+    // moveZeroesToEndBrute(nums);
     moveZeroesToEndOptimal(nums);
 
     cout << "Updated Array" << nl;
